@@ -1,2 +1,2 @@
 # KeepCont4ct
-COP4331 - Contact mananger
+COP4331 - Contact manager
