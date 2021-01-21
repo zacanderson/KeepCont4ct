@@ -12,6 +12,9 @@
         returnWithError($conn->connect_error);
 
     }else{
+        //gets data from the inData json payload
+        $sql = "SELECT ID,firstName,lastName FROM Users where Login='" . $inData["login"] . "' and Password='" . $inData["password"] . "'";
+
         //gets results from database
         $result = $conn->query($sql);
 
