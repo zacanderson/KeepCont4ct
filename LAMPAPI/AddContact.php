@@ -23,7 +23,7 @@
 		$conn->close();
 	}
 	
-	$retvalue1 = '{"Successfully Added":"' . $FirstName . '"}'
+	$retvalue1 = '{"Successfully Added":"' . $FirstName . '"}';
 	sendResultInfoAsJson( $retvalue1 );
 	
 	function getRequestInfo()
