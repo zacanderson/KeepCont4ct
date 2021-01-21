@@ -15,6 +15,12 @@
             $ret = "Username already exists";
             returnWithError($ret);
 
+        }else{
+            $sql = "INSERT INTO Users(firstName, lastName, Login, Password) VALUES ('".$inData["firstName"]."', '". $inData["lastName"] . "', .'"$inData["login"] . "', .'"$inData["password"]"'.)";
+            $result = $conn->query($ret);
+
+            
+
         }
     }
 
@@ -33,6 +39,11 @@
 	    $retValue = '{"error":"' . $err . '"}';
         sendResultInfoAsJson( $retValue );
         
+    }
+    
+    function returnWithInfo( $firstName, $lastName, $id ){
+		$retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
+		sendResultInfoAsJson( $retValue );
 	}
 
 
