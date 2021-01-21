@@ -5,17 +5,47 @@
     $firstName = "";
     $lastName = "";
 
+    //connect to database using user and password
     $conn = new myqli("localhost", "NotTheBeast", "WeAdoreCOP4331", "KeepContact");
 
     if($conn -> connect_error){
         returnWithError($conn->connect_error);
 
     }else{
+        //gets results from database
+        $result = $conn->query($sql);
+
+        //if there are records we can pull them
+        if ($result->num_rows > 0){
+			$row = $result->fetch_assoc();
+			$firstName = $row["firstName"];
+			$lastName = $row["lastName"];
+			$id = $row["ID"];
+			
+			returnWithInfo($firstName, $lastName, $id );
         
+        //otherwise there is no user with the login and password
+        }else{
+			returnWithError( "No Records Found" );
+        }
+        
+		$conn->close();
 
     }
 
+    function getRequestInfo(){
+		return json_decode(file_get_contents('php://input'), true);
+	}
 
+    function sendResultInfoAsJson( $obj ){
+		header('Content-type: application/json');
+		echo $obj;
+    }
+    
+    function returnWithInfo( $firstName, $lastName, $id ){
+		$retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
+		sendResultInfoAsJson( $retValue );
+	}
 
     function returnWithError( $err ){
 		$retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
