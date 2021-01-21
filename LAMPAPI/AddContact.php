@@ -15,7 +15,7 @@
 	else
 	{
 		// inserts data from json file into database
-		$sql = "INSERT into ContactInfo (FirstName,LastName,PhoneNumber,Email) VALUES ('" . $FirstName . "','" . $LastName . "','" . $PhoneNumber . "','" . $Email . "')";
+		$sql = "INSERT into ContactInfo (FirstName,LastName,PhoneNumber,Email) VALUES ('" . $FirstName . "','" . $LastName . "'," . $PhoneNumber . ",'" . $Email . "')";
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $sql );
