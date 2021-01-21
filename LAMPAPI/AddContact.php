@@ -18,7 +18,7 @@
 		$sql = "INSERT into ContactInfo (FirstName,LastName,PhoneNumber,Email) VALUES ('" . $FirstName . "','" . $LastName . "'," . $PhoneNumber . ",'" . $Email . "')";
 		if( $result = $conn->query($sql) != TRUE )
 		{
-			returnWithError( $sql);
+			returnWithError( $conn->error);
 		}
 		$conn->close();
 	}
