@@ -1,6 +1,7 @@
 <?php
 	$inData = getRequestInfo();
 	
+	// stores values from json file into variables
 	$firstName = $inData["firstName"];
 	$lastName = $inData["lastName"];
 	$phoneNumber = $inData["phoneNumber"];
@@ -13,7 +14,8 @@
 	} 
 	else
 	{
-		$sql = "insert into ContactInfo (firstName,lastName,phoneNumber,email) VALUES (" . $firstName . ",'" . $lastName . ",'" . $phoneNumber . "," . $email . "')";
+		// inserts data from json file into database
+		$sql = "INSERT into ContactInfo (firstName,lastName,phoneNumber,email) VALUES (" . $firstName . ",'" . $lastName . ",'" . $phoneNumber . "," . $email . "')";
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error );
