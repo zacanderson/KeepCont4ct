@@ -11,7 +11,7 @@
         $sql = "SELECT Login FROM Users WHERE Login= '".$inData["login"]."'";
         $result = $conn->query($sql);
 
-        if($result->num_rows > 0){
+        if ($result->num_rows > 0){
             $ret = "Username already exists";
             returnWithError($ret);
 
@@ -24,13 +24,16 @@
 	    echo $obj;
     }
 
+    function getRequestInfo(){
+        return json_decode(file_get_contents('php://input'), true);
+        
+	}
 
     function returnWithError( $err ){
 	    $retValue = '{"error":"' . $err . '"}';
         sendResultInfoAsJson( $retValue );
         
 	}
-
 
 
 ?>
