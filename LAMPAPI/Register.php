@@ -2,21 +2,21 @@
 
     $inData = getRequestInfo();
 
-    $firstName = "";
-    $lastName = "";
-    $login = "";
-    $passwrod = "";
-
     $conn = new mysqli("localhost", "NotTheBeast", "WeAdoreCOP4331", "KeepContact");
 
-    if(conn->connect_error){
-
+    if($conn->connect_error){
+        returnWithError($conn->connect_error);
 
 
     }else{
+        $sql = "SELECT Login FROM Users where firstName= '". $inData["login"]"'";
+        $result = $conn->query($sql);
 
+        if($result->num_rows > 0){
+            returnWithError("Username already exists");
 
-
+        }
+        
     }
 
 
@@ -27,7 +27,7 @@
 
 
     function returnWithError( $err ){
-	    $retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
+	    $retValue = '"error":"' . $err . '"}';
         sendResultInfoAsJson( $retValue );
         
 	}
