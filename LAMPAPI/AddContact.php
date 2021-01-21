@@ -23,7 +23,6 @@
 		$conn->close();
 	}
 	
-	returnWithError("");
 	
 	function getRequestInfo()
 	{
