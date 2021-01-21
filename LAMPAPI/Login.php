@@ -23,8 +23,13 @@
 			$row = $result->fetch_assoc();
 			$firstName = $row["firstName"];
 			$lastName = $row["lastName"];
-			$id = $row["ID"];
-			
+            $id = $row["ID"];
+            
+            //should set DateLastLoggedIn to current time
+            $sql = "UPDATE Users SET DateLastLoggedIn = CURRENT_TIMESTAMP WHERE ID =" . $id ;
+            $result = $conn->query($sql);
+            
+            
 			returnWithInfo($firstName, $lastName, $id );
         
         //otherwise there is no user with the login and password
@@ -36,6 +41,8 @@
 
     }
 
+
+    //helper functions
     function getRequestInfo(){
 		return json_decode(file_get_contents('php://input'), true);
 	}
