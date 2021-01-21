@@ -4,15 +4,16 @@
 
     $conn = new mysqli("localhost", "NotTheBeast", "WeAdoreCOP4331", "KeepContact");
 
-    if($conn->connect_error){
+    if($conn -> connect_error){
         returnWithError($conn->connect_error);
 
     }else{
-        $sql = "SELECT Login FROM Users WHERE Login= '". $inData["login"]"'";
+        $sql = "SELECT Login FROM Users WHERE Login= '".$inData["login"]."'";
         $result = $conn->query($sql);
 
         if($result->num_rows > 0){
-            returnWithError("Username already exists");
+            $ret = "Username already exists";
+            returnWithError($ret);
 
         }
     }
@@ -25,7 +26,7 @@
 
 
     function returnWithError( $err ){
-	    $retValue = '"error":"' . $err . '"}';
+	    $retValue = '{"error":"' . $err . '"}';
         sendResultInfoAsJson( $retValue );
         
 	}
