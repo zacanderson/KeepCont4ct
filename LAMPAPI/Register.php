@@ -20,7 +20,7 @@
 
         }else{
             $sql = "INSERT INTO Users(firstName, lastName, Login, Password) VALUES ('".$inData["firstName"]."', '". $inData["lastName"] . "', '" . $inData["login"] . "', '" . $inData["password"] . "')";
-            $result = $conn->query($ret);
+            $result = $conn->query($sql);
 
             returnWithInfo($firstName, $lastName);
 
