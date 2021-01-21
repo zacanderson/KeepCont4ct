@@ -6,6 +6,7 @@
 	$LastName = $inData["LastName"];
 	$PhoneNumber = $inData["PhoneNumber"];
 	$Email = $inData["Email"];
+	$UserID = $inData["UserID"];
 
 	$conn = new mysqli("localhost", "NotTheBeast", "WeAdoreCOP4331", "KeepContact");
 	if ($conn->connect_error) 
@@ -15,7 +16,7 @@
 	else
 	{
 		// inserts data from json file into database
-		$sql = "INSERT into ContactInfo (FirstName,LastName,PhoneNumber,Email) VALUES ('" . $FirstName . "','" . $LastName . "'," . $PhoneNumber . ",'" . $Email . "')";
+		$sql = "INSERT into ContactInfo (FirstName,LastName,PhoneNumber,Email,UserID) VALUES ('" . $FirstName . "','" . $LastName . "'," . $PhoneNumber . ",'" . $Email . "','" . $UserID . "')";
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error);
