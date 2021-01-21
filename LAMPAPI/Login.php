@@ -6,7 +6,7 @@
     $lastName = "";
 
     //connect to database using user and password
-    $conn = new myqli("localhost", "NotTheBeast", "WeAdoreCOP4331", "KeepContact");
+    $conn = new mysqli("localhost", "NotTheBeast", "WeAdoreCOP4331", "KeepContact");
 
     if($conn -> connect_error){
         returnWithError($conn->connect_error);
