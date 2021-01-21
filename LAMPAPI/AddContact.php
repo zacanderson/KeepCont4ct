@@ -22,8 +22,8 @@
 		}
 		$conn->close();
 	}
-	$retvalue1 = '{"Successfully Added":"' . $err . '"}'
-	sendResultInfoAsJson( $retValue1 );
+	
+	sendResultInfoAsJson( $FirstName );
 	
 	function getRequestInfo()
 	{
