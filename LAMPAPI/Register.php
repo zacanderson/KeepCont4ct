@@ -2,6 +2,9 @@
 
     $inData = getRequestInfo();
 
+    $firstName = $inData["firstName"];
+    $lastName = $inData["lastName"];
+
     $conn = new mysqli("localhost", "NotTheBeast", "WeAdoreCOP4331", "KeepContact");
 
     if($conn -> connect_error){
@@ -16,10 +19,10 @@
             returnWithError($ret);
 
         }else{
-            $sql = "INSERT INTO Users(firstName, lastName, Login, Password) VALUES ('".$inData["firstName"]."', '". $inData["lastName"] . "', .'"$inData["login"] . "', .'"$inData["password"]"'.)";
-            $result = $conn->query($ret);
+            $sql = "INSERT INTO Users(firstName, lastName, Login, Password) VALUES ('".$inData["firstName"]."', '". $inData["lastName"] . "', '" . $inData["login"] . "', '" . $inData["password"] . "')";
+            $result = $conn->query($sql);
 
-            
+            returnWithInfo($firstName, $lastName);
 
         }
     }
@@ -41,8 +44,8 @@
         
     }
     
-    function returnWithInfo( $firstName, $lastName, $id ){
-		$retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
+    function returnWithInfo( $firstName, $lastName){
+		$retValue = '{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 
