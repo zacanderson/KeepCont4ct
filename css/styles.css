@@ -1,26 +1,94 @@
-body
+body 
 {
-    background-color: #e6e6e6;
-}
+    text-align:center;
+    margin: 0;
 
-#title
+
+}
+label
 {
-    font-size: 40px;
+    border-radius: 0px;
+}
+header
+{
+    position: fixed;
+    top: -10;
+    left: -15;
+    right: 0;
+
     width: 100%;
-    margin: 2% 5%;
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 1%;
+    z-index:1000;
+    border-radius: 60px;
+
+
+
 }
 
-#loginDiv
+.HeaderLogo {
+    text-align: center;
+    margin: 0 auto;
+    width:10%;
+}
+
+
+#dashDiv
+{
+   
+    width: 80%;
+    height: 80%;
+    background-color: #f1ece7;
+   border-image: linear-gradient(to bottom, rgb(145, 255, 209), rgb(155, 255, 230)) 1 100%;
+   border-width: 6px;
+   border-style:dotted;
+    border-radius: 25px;
+    text-align:center;
+    position: relative;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+   
+
+}
+
+#searchDiv
 {
     font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-    background-color: #b2b2b2;
-		border-radius: 25px;
+    width: 30%;
+    padding: 10px;
+    background-color: #c9c9c9;
+
+    display: inline-block;
+    height: 75%;
+    margin:auto;
+    margin-left: 10%;
+    vertical-align:top;
+    margin-top: 5%;
+    
+
+
+
+
+}
+#addDiv
+{
+    font-size: 30px;
+    width: 30%;
+    padding: 10px;
+    background-color: #c9c9c9;
+    display: inline-block;
+    margin-right: 100px;
+    height: 75%;
+    margin:auto;
+    margin-top: 0%;
+    vertical-align:top;
+    margin-top: 5%;
+
+
+
 }
 
 #loggedInDiv
@@ -30,6 +98,25 @@ body
     margin-left: 15%;
     padding: 25px;
     background-color: #b2b2b2;
+    border: 5px solid gray;
+
+}
+.vl 
+{
+    
+ 
+  height: 75%;
+  border: 1px solid rgb(85, 85, 85);
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+    margin-left: 10%;
+
+    
+    
+    
+    
 }
 
 #accessUIDiv
@@ -51,7 +138,7 @@ body
 }
 
 .buttons:hover{
-    background-color: #99ffcc;
+    background-color: #00d5124f;
     color: #FFFFFF;
     opacity: 50%;
 }
@@ -74,14 +161,27 @@ body
 }
 
 input[type="text"],input[type="password"]{
-    border-radius: 25px;
-    text-align: center;
+    
     width: 80%;
-    margin-left: 10%;
-    margin-bottom: 2%;
+    height: 9%;
+    text-align: left;
+    margin-bottom: 4%;
     font-family: 'Ubuntu', sans-serif;
 }
 
+input[type="submit"]
+{
+    background-color: aquamarine;
+    color: black;
+    width: 80%;
+    height: 9%;
+}
+
+input[type="submit"]:hover {
+    background-color: #ffffff; /* Green */
+    color: aquamarine;
+    border-color: aquamarine;
+  }
 #inner-title{
     display: inline-block;
     font-size: 0.8em;
@@ -105,20 +205,6 @@ input[type="text"],input[type="password"]{
 }
 
 #userName{
-    display: inline-block;
-    width: 80%;
-    margin-left: 10%;
-    text-align: center;
-}
-
-#firstName{
-    display: inline-block;
-    width: 80%;
-    margin-left: 10%;
-    text-align: center;
-}
-
-#lastName{
     display: inline-block;
     width: 80%;
     margin-left: 10%;
