@@ -41,9 +41,10 @@ header
     width: 80%;
     height: 80%;
     background-color: #f1ece7;
-   border-image: linear-gradient(to bottom, rgb(145, 255, 209), rgb(155, 255, 230)) 1 100%;
-   border-width: 6px;
-   border-style:dotted;
+   
+   border-width: 3px;
+   border-style:solid;
+   border-color: aquamarine;
     border-radius: 25px;
     text-align:center;
     position: relative;
