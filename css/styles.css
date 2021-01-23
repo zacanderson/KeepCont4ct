@@ -9,6 +9,7 @@ label
 {
     border-radius: 0px;
 }
+
 header
 {
     position: fixed;
@@ -32,6 +33,7 @@ header
     text-align: center;
     margin: 0 auto;
     width:10%;
+
 }
 
 
