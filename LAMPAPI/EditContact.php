@@ -6,6 +6,8 @@
     //that we want to change - ID in 
     //from the ContactInfo table 
 
+    $ID = $inData["ID"];
+
     //connect to database using user and password
     $conn = new mysqli("localhost", "NotTheBeast", "WeAdoreCOP4331", "KeepContact");
 
@@ -15,7 +17,17 @@
 
     }else{
 
+        $sql = "UPDATE ContactInfo SET firstName= '". $inData["firstName"] ."' lastName= '". $inData["lastName"] ."' phoneNumber= '". $inData["phoneNumber"] ."' email= '". $inData["email"] ."' WHERE ID= '". $inData["ID"] ."'";
+        $result = $conn->query($sql);
 
+        if($result != TRUE){
+            returnWithError("Result returned false");
+
+
+        }
+
+        return returnWithInfo("Record updated");
+        
 
 
     }
@@ -36,8 +48,8 @@
         
     }
     
-    function returnWithInfo( $firstName, $lastName){
-		$retValue = '{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
+    function returnWithInfo($info){
+		$retValue = '{"ID:" '" . $ID . "',"error":'" . $info . "'}';
 		sendResultInfoAsJson( $retValue );
 	}
 
