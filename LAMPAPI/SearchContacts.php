@@ -3,7 +3,6 @@
 		
 	$searchResults = "";
 	$searchCount = 0;
-	$search = $inData["search"];
 
 	$conn = new mysqli("localhost", "NotTheBeast", "WeAdoreCOP4331", "KeepContact");
 	if ($conn->connect_error) 
@@ -12,7 +11,7 @@
 	} 
 	else
 	{
-		$sql = "SELECT firstName FROM ContactInfo where firstName like '%" . $search . "%' and UserID=" . $inData["userId"];
+		$sql = "SELECT firstName FROM ContactInfo where firstName like '%" . $inData["search"] . "%' and UserID=" . $inData["userId"];
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0)
 		{
@@ -23,7 +22,7 @@
 					$searchResults .= ",";
 				}
 				$searchCount++;
-				$searchResults .= '{"phoneNumber":' . $row = ["phoneNumber"] . ',"firstName":"' . $row = ["firstName"] . '","lastName":"' . $row = ["lastName"] . '"}';
+				$searchResults .= '"' . $row["firstName"] . '"';
 			}
 		}
 		else
@@ -54,7 +53,7 @@
 	
 	function returnWithInfo( $searchResults )
 	{
-		$retValue = '{"Results":' . $searchResults . '}';
+		$retValue = '{"results":[' . $searchResults . '],"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 ?>
