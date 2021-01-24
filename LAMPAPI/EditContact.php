@@ -2,7 +2,7 @@
 
     $inData = getRequestInfo();
 
-    $id = $inData["ID"];
+    $id = $inData["id"];
     $firstName = $inData["firstName"];
     $lastName = $inData["lastName"];
     $email = $inData["email"];
@@ -15,11 +15,13 @@
         returnWithError($conn->connect_error);
 
     }else{
-        $sql = "UPDATE ContactInfo SET firstName = ? WHERE ID = ?";
+        $sql = "UPDATE ContactInfo SET firstName = ?, lastName = ?, email= ?, phoneNumber= ? WHERE ID = ?";
         $sql = $conn->prepare($sql);
-        $sql->bind_param("si", $firstName, $id);
+        $sql->bind_param("sssii", $firstName, $lastName, $email, $phoneNumber, $id);
         
         $sql->execute();
+
+        returnWithInfo($firstName, $lastName, $id);
 
     }
 
