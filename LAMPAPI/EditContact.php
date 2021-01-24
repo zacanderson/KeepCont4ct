@@ -8,8 +8,20 @@
     $email = $inData["email"];
     $phoneNumber = $inData["phoneNumber"];
 
-    returnWithError($firstName, $lastName, $id);
+    //connect to database
+    $conn = new mysqli("localhost", "NotTheBeast", "WeAdoreCOP4331", "KeepContact");
 
+    if($conn->connect_error){
+        returnWithError($conn->connect_error);
+
+    }else{
+        $sql = "UPDATE ContactInfo SET firstName = ? WHERE ID = ?";
+        $sql = $conn->prepare($sql);
+        $sql->bind_param("si", $firstName, $id);
+        
+        $sql->execute();
+
+    }
 
 
 
