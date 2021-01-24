@@ -22,7 +22,7 @@
 		$conn->close();
 	}
 	
-	$retvalue1 = '{"Successfully Deleted":"' . $FirstName . '","' . $LastName . '"}';
+	$retvalue1 = '{"Successfully Deleted":"' . $FirstName . '"}';
 	sendResultInfoAsJson( $retvalue1 );
 	
 	function getRequestInfo()
