@@ -13,7 +13,7 @@
 	} 
 	else
 	{
-		// inserts data from json file into database
+		// deletes data from json file into database
 		$sql = "DELETE FROM ContactInfo where firstName = $FirstName AND lastName = $LastName AND userID = $userID";
 		if( $result = $conn->query($sql) != TRUE )
 		{
@@ -22,7 +22,7 @@
 		$conn->close();
 	}
 	
-	$retvalue1 = '{"Successfully Deleted":"' . $FirstName . '","' . $LastName . '"}';
+	$retvalue1 = '{"Successfully Deleted"}';
 	sendResultInfoAsJson( $retvalue1 );
 	
 	function getRequestInfo()
