@@ -3,7 +3,7 @@
 		
 	$searchResults = "";
 	$searchCount = 0;
-	$seach = $inData["search"];
+	$search = $inData["search"];
 
 	$conn = new mysqli("localhost", "NotTheBeast", "WeAdoreCOP4331", "KeepContact");
 	if ($conn->connect_error) 
