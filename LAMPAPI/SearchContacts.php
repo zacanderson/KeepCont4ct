@@ -23,7 +23,7 @@
 					$searchResults .= ",";
 				}
 				$searchCount++;
-				$searchResults .= '"' . $row["firstName"] . '", "' . $row["lastName"] . '"';
+				$searchResults .= '{"phoneNumber":' . $row = ["phoneNumber"] . ',"firstName":"' . $row = ["firstName"] . '","lastName":"' . $row = ["lastName"] . '"}';
 			}
 		}
 		else
