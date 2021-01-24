@@ -14,7 +14,7 @@
 	else
 	{
 		// deletes data from json file into database
-		$sql = "DELETE FROM ContactInfo where firstName = ''" . $FirstName . "' AND userID = " . $userID . "'";
+		$sql = "DELETE FROM ContactInfo where firstName = ' . $FirstName . '";
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error);
