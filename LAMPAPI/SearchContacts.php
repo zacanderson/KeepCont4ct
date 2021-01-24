@@ -3,6 +3,7 @@
 		
 	$searchResults = "";
 	$searchCount = 0;
+	$seach = $inData["search"];
 
 	$conn = new mysqli("localhost", "NotTheBeast", "WeAdoreCOP4331", "KeepContact");
 	if ($conn->connect_error) 
@@ -11,7 +12,7 @@
 	} 
 	else
 	{
-		$sql = "SELECT firstName FROM ContactInfo where firstName like '%" . $inData["search"] . "%' and UserID=" . $inData["userId"];
+		$sql = "SELECT firstName FROM ContactInfo where firstName like '%" . $search . "%' and UserID=" . $inData["userId"];
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0)
 		{
