@@ -3,8 +3,8 @@
 	
 	// stores values from json file into variables
 	$FirstName = $inData["FirstName"];
-	//$LastName = $inData["LastName"];
-	//$UserID = $inData["UserID"];
+	$LastName = $inData["LastName"];
+	$UserID = $inData["UserID"];
 
 	$conn = new mysqli("localhost", "NotTheBeast", "WeAdoreCOP4331", "KeepContact");
 	if ($conn->connect_error) 
@@ -14,7 +14,7 @@
 	else
 	{
 		// deletes data from json file into database
-		$sql = "DELETE FROM ContactInfo where firstName = 'Tristan'";
+		$sql = "DELETE FROM ContactInfo where firstName = '" . $FirstName . "' AND userID = " . $userID . "";
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error);
@@ -22,7 +22,7 @@
 		$conn->close();
 	}
 	
-	$retvalue1 = '{"Successfully Deleted":"' . $FirstName . '"}"'
+	$retvalue1 = '{"Successfully Deleted":"' . $FirstName . '","' . $LastName . '"}';
 	sendResultInfoAsJson( $retvalue1 );
 	
 	function getRequestInfo()
