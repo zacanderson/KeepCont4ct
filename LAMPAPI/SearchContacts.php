@@ -22,7 +22,7 @@
 					$searchResults .= ",";
 				}
 				$searchCount++;
-				$searchResults .= '"' . $row["firstName"] . '"';
+				$searchResults .= '"' . $row["firstName"] . '" "' . $row["lastName"] . '"';
 			}
 		}
 		else
