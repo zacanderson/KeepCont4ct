@@ -20,7 +20,7 @@
 		$sql->execute();
 		$sql->store_result();
 		$sql->bind_result($result);
-		if( $result = $conn->query($sql) != TRUE )
+		if( $result != TRUE )
 		{
 			returnWithError( $conn->error);
 		}
