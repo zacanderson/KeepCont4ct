@@ -15,9 +15,9 @@
 	} 
 	else
 	{
-		$sql = "SELECT firstName FROM ContactInfo where firstName like ? and UserID = ?";
+		$sql = "SELECT firstName FROM ContactInfo where search like ? and UserID = ?";
 		$sql = $conn->prepare($sql);
-		$search = '%' . firstName . '%';
+		$search = '%' . $search . '%';
 		$sql->bind_param("si", $search, $UserID);
 		$sql->execute();
 		$sql->store_result();
