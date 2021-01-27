@@ -20,7 +20,8 @@
 		$search = '%' . firstName . '%';
 		$sql->bind_param("si", $search, $UserID);
 		$sql->execute();
-		$result = $sql->get_result();
+		$sql->store_result();
+		$sql->bind_result($result);
 		if ($result->num_rows > 0)
 		{
 			while($row = $result->fetch_assoc())
