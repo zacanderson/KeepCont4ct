@@ -13,7 +13,7 @@
     }else{
 
         //$sql = "SELECT Login FROM Users WHERE Login= '".$inData["login"]."'";
-        $sql = conn->prepare("SELECT Login FROM Users WHERE Login=?");
+        $sql = $conn->prepare("SELECT Login FROM Users WHERE Login=?");
         $sql->bind_param("s", $inData["login"]);
         $sql->execute();
         
