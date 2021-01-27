@@ -6,6 +6,8 @@
 	$search = $inData["search"];
 	$UserID = $inData["UserID"];
 
+	
+
 	$conn = new mysqli("localhost", "NotTheBeast", "WeAdoreCOP4331", "KeepContact");
 	if ($conn->connect_error) 
 	{
@@ -15,6 +17,7 @@
 	{
 		$sql = "SELECT firstName FROM ContactInfo where firstName like ? and UserID = ?";
 		$sql = $conn->prepare($sql);
+		$search = '%' . firstName . '%';
 		$sql->bind_param("si", $search, $UserID);
 		$sql->execute();
 		$result = $sql->get_result();
