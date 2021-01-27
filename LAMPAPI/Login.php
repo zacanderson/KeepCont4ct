@@ -26,7 +26,7 @@
 
         //if there are records we can pull them
         if ($result->num_rows > 0){
-			    $row = $result->fetch_assoc();
+			    $row = $result->fetch();
 			    $firstName = $row["firstName"];
 			    $lastName = $row["lastName"];
           $id = $row["ID"];
