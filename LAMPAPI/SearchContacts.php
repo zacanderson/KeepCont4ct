@@ -31,7 +31,7 @@
 					$searchResults .= ",";
 				}
 				$searchCount++;
-				$searchResults .= '"' . $row["FirstName"] . '","' . $row["LastName"] . '"';
+				$searchResults .= '"test"';
 			}
 		}
 		else
