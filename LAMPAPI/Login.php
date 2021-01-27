@@ -20,7 +20,9 @@
         $sql->execute();
 
         //gets results from database
-        $result = $conn->query($sql);
+        $sql->store_result();
+        $sql->bind_result($result);
+
 
         //if there are records we can pull them
         if ($result->num_rows > 0){
