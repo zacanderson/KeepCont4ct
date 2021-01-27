@@ -13,7 +13,7 @@
 	} 
 	else
 	{
-		$sql = "SELECT firstName FROM ContactInfo where firstName like '%" . $search . "%' and UserID= $UserID";
+		$sql = "SELECT FirstName FROM ContactInfo where FirstName like '%" . $search . "%' and UserID= $UserID";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0)
 		{
@@ -24,7 +24,7 @@
 					$searchResults .= ",";
 				}
 				$searchCount++;
-				$searchResults .= '"' . $row["firstName"] . '"';
+				$searchResults .= '"' . $row["FirstName"] . '"';
 			}
 		}
 		else
