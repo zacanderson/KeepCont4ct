@@ -32,6 +32,7 @@
 				$searchCount++;
 				$searchResults .= '"test"';
 			}
+			returnWithInfo( $searchResults );
 		}
 		else
 		{
@@ -40,7 +41,7 @@
 		$conn->close();
 	}
 
-	returnWithInfo( $searchResults );
+	
 
 	function getRequestInfo()
 	{
