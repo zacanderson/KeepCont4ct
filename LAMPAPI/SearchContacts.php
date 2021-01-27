@@ -30,7 +30,7 @@
 					$searchResults .= ",";
 				}
 				$searchCount++;
-				$searchResults .= '"' . $row["FirstName"] . '","' . $row["LastName"] . '"';
+				$searchResults .= '"' ." $row[FirstName"] . '","' . $row["LastName"] . '"';
 			}
 		}
 		else
@@ -40,7 +40,7 @@
 		$conn->close();
 	}
 
-	returnWithInfo( $searchResults );
+	//returnWithInfo( $searchResults );
 
 	function getRequestInfo()
 	{
