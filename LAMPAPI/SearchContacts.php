@@ -15,6 +15,7 @@
 	} 
 	else
 	{
+		//Search by first name partial completion
 		$sql = "SELECT firstName, lastName, phoneNumber, email FROM ContactInfo where firstName like ? and UserID = ?";
 		$sql = $conn->prepare($sql);
 		$search = '%' . $search . '%';
@@ -32,6 +33,7 @@
 				$searchCount++;
 				$searchResults .= '"' . $row["firstName"] . ' ' . $row["lastName"] . ' ' . $row["phoneNumber"] . ' ' . $row["email"] . '"';
 			}
+			// return json file with array where each index is a contact.
 			returnWithInfo( $searchResults );
 		}
 		else
