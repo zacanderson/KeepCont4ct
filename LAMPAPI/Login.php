@@ -13,7 +13,10 @@
 
     }else{
         //gets data from the inData json payload
-        $sql = "SELECT ID,firstName,lastName FROM Users where Login='" . $inData["login"] . "' and Password='" . $inData["password"] . "'";
+        //$sql = "SELECT ID,firstName,lastName FROM Users where Login='" . $inData["login"] . "' and Password='" . $inData["password"] . "'";
+
+        $sql = conn->prepare("SELECT ID, firstName, lastName, FROM Users where Login= ? and Password=?");
+        $sql->bind_param("ss", $inData["login"], $inData["password"]);
 
         //gets results from database
         $result = $conn->query($sql);
@@ -24,7 +27,7 @@
 			    $firstName = $row["firstName"];
 			    $lastName = $row["lastName"];
           $id = $row["ID"];
-            
+          
           //should set DateLastLoggedIn to current time
           $sql = "UPDATE Users SET DateLastLoggedIn = CURRENT_TIMESTAMP WHERE ID =" . $id ;
           $result = $conn->query($sql);
