@@ -20,13 +20,12 @@
         $sql->execute();
 
         //gets results from database
-        $sql->store_result();
-        $sql->bind_result($result);
+        $result = $sql->get_result();
 
 
         //if there are records we can pull them
         if ($result->num_rows > 0){
-			    $row = $result->fetch();
+			    $row = $result->fetch_assoc();
 			    $firstName = $row["firstName"];
 			    $lastName = $row["lastName"];
           $id = $row["ID"];
