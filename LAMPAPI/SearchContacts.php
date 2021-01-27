@@ -4,7 +4,7 @@
 	$searchResults = "";
 	$searchCount = 0;
 	$search = $inData["search"];
-	$UserID = $inData["UserID"]
+	$UserID = $inData["UserID"];
 
 	$conn = new mysqli("localhost", "NotTheBeast", "WeAdoreCOP4331", "KeepContact");
 	if ($conn->connect_error) 
