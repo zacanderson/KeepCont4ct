@@ -40,7 +40,7 @@
 		$conn->close();
 	}
 
-	//returnWithInfo( $searchResults );
+	returnWithInfo( $searchResults );
 
 	function getRequestInfo()
 	{
