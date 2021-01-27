@@ -15,7 +15,7 @@
         //gets data from the inData json payload
         //$sql = "SELECT ID,firstName,lastName FROM Users where Login='" . $inData["login"] . "' and Password='" . $inData["password"] . "'";
 
-        $sql = $conn->prepare("SELECT ID, firstName, lastName, FROM Users where Login= ? and Password=?");
+        $sql = $conn->prepare("SELECT ID, firstName, lastName FROM Users where Login= ? and Password=?");
         $sql->bind_param("ss", $inData["login"], $inData["password"]);
         $sql->execute();
 
