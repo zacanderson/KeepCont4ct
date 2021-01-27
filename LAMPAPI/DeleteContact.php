@@ -18,9 +18,7 @@
 		$sql = $conn->prepare($sql);
 		$sql->bind_param("si", $FirstName, $UserID);
 		$sql->execute();
-		$sql->store_result();
-		$sql->bind_result($result);
-		if( $result != TRUE )
+		if($sql->execute() == FALSE)
 		{
 			returnWithError( $conn->error);
 		}
