@@ -11,7 +11,12 @@
         returnWithError($conn->connect_error);
 
     }else{
-        $sql = "SELECT Login FROM Users WHERE Login= '".$inData["login"]."'";
+
+        //$sql = "SELECT Login FROM Users WHERE Login= '".$inData["login"]."'";
+        $sql = conn->prepare("SELECT Login FROM Users WHERE Login=?");
+        $sql->bind_param("s", $inData["login"]);
+        $sql->execute();
+        
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0){

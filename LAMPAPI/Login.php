@@ -17,6 +17,7 @@
 
         $sql = conn->prepare("SELECT ID, firstName, lastName, FROM Users where Login= ? and Password=?");
         $sql->bind_param("ss", $inData["login"], $inData["password"]);
+        $sql->execute();
 
         //gets results from database
         $result = $conn->query($sql);
