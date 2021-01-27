@@ -22,6 +22,7 @@
 		$conn->close();
 	}
 	
+	// value to return in json file
 	$retvalue1 = '{"Successfully Deleted":"' . $FirstName . '"}';
 	sendResultInfoAsJson( $retvalue1 );
 	
