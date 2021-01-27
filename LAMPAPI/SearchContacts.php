@@ -30,7 +30,7 @@
 					$searchResults .= ",";
 				}
 				$searchCount++;
-				$searchResults .= '"' . $row["firstName"] . '"';
+				$searchResults .= '"' . $row["firstName"] . '" '" . $row["LastName"] . "'';
 			}
 			returnWithInfo( $searchResults );
 		}
