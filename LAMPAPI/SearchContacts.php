@@ -15,13 +15,12 @@
 	} 
 	else
 	{
-		$sql = "SELECT firstName FROM ContactInfo where search like ? and UserID = ?";
+		$sql = "SELECT firstName FROM ContactInfo where firstName like ? and UserID = ?";
 		$sql = $conn->prepare($sql);
 		$search = '%' . $search . '%';
 		$sql->bind_param("si", $search, $UserID);
 		$sql->execute();
-		$sql->store_result();
-		$sql->bind_result($result);
+		$result = $sql->get_result();
 		if ($result->num_rows > 0)
 		{
 			while($row = $result->fetch_assoc())
