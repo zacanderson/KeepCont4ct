@@ -15,7 +15,7 @@
         //gets data from the inData json payload
         //$sql = "SELECT ID,firstName,lastName FROM Users where Login='" . $inData["login"] . "' and Password='" . $inData["password"] . "'";
 
-        $sql = conn->prepare("SELECT ID, firstName, lastName, FROM Users where Login= ? and Password=?");
+        $sql = $conn->prepare("SELECT ID, firstName, lastName FROM Users where Login= ? and Password=?");
         $sql->bind_param("ss", $inData["login"], $inData["password"]);
         $sql->execute();
 
@@ -26,7 +26,7 @@
 
         //if there are records we can pull them
         if ($result->num_rows > 0){
-			    $row = $result->fetch_assoc();
+			    $row = $result->fetch();
 			    $firstName = $row["firstName"];
 			    $lastName = $row["lastName"];
           $id = $row["ID"];
