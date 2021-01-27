@@ -17,7 +17,7 @@
         $sql->bind_param("s", $inData["login"]);
         $sql->execute();
         
-        $result = $conn->query($sql);
+        $result = $sql->get_result();
 
         if ($result->num_rows > 0){
             $ret = "Username already exists";
