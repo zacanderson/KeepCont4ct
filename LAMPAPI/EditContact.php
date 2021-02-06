@@ -17,7 +17,7 @@
     }else{
         $sql = "UPDATE ContactInfo SET firstName = ?, lastName = ?, email= ?, phoneNumber= ? WHERE ID = ?";
         $sql = $conn->prepare($sql);
-        $sql->bind_param("sssii", $firstName, $lastName, $email, $phoneNumber, $id);
+        $sql->bind_param("ssssi", $firstName, $lastName, $email, $phoneNumber, $id);
         
         $sql->execute();
 
