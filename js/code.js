@@ -43,7 +43,7 @@ function doLogin()
 
 		saveCookie();
 		// change redirect to landing page (still needs to be created)
-		window.location.replace = "http://www.keepcont4ct.tech/dashboard.html";
+		window.location.replace("http://www.keepcont4ct.tech/dashboard.html");
 	}
 	catch(err)
 	{
