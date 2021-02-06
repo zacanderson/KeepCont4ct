@@ -1,4 +1,4 @@
-var urlBase = 'http://keepcont4ct.tech/LAMPAPI';
+var urlBase = 'https//:www.keepcont4ct.tech/LAMPAPI';
 var extension = 'php';
 
 var userId = 0;
@@ -43,7 +43,7 @@ function doLogin()
 
 		saveCookie();
 		// change redirect to landing page (still needs to be created)
-		window.location.href = "color.html";
+		window.location.href = "dashboard.html";
 	}
 	catch(err)
 	{
