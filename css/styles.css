@@ -57,7 +57,7 @@ header
 
 }
 
-#searchDiv
+#loginDiv
 {
     font-size: 30px;
     width: 30%;
@@ -172,7 +172,7 @@ input[type="text"],input[type="password"]{
     font-family: 'Ubuntu', sans-serif;
 }
 
-input[type="submit"]
+#loginButton, #registerButton
 {
     background-color: aquamarine;
     color: black;
@@ -180,7 +180,7 @@ input[type="submit"]
     height: 9%;
 }
 
-input[type="submit"]:hover {
+#loginButton:hover, #registerButton:hover  {
     background-color: #ffffff; /* Green */
     color: aquamarine;
     border-color: aquamarine;
