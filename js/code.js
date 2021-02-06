@@ -43,7 +43,7 @@ function doLogin()
 
 		saveCookie();
 		// change redirect to landing page (still needs to be created)
-		window.location.href = "dashboard.html";
+		window.location.href = "/dashboard.html";
 	}
 	catch(err)
 	{
