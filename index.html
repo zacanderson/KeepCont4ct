@@ -14,25 +14,25 @@
 <div id="dashDiv">
 <div id="addDiv">
     <h3>Register</h3>
-    <form action="/action_page.php">
+    
         <input type="text" id="fname" name="fname" placeholder="First Name"><br>
         <input type="text" id="lname" name="lname" placeholder="Last Name"><br>
         <input type="text" id="uname" name="uname" placeholder="Username"><br>
-        <input type="text" id="pass" name="pass" placeholder="Password"><br>
-        <input type="submit" value="Register">
-      </form>
+        <input type="password" id="pass" name="pass" placeholder="Password"><br>
+        <button type="button" value="Register" id ="registerButton">Register</button>
+     
 </div>
 
 <div class="vl"></div>
 
-<div id="searchDiv">
+<div id="loginDiv">
     <h3>Login</h3>
-    <form action="/action_page.php">
-        
-        <input type="text" id="uname" name="uname" placeholder="Username"><br>
-        <input type="text" id="pass" name="pass" placeholder="Password"><br>
-        <input type="submit" value="Login">
-      </form>
+    
+        <input type="text" id="loginName" name="uname" placeholder="Username"><br>
+        <input type="password" id="loginPassword" name="pass" placeholder="Password"><br>
+        <button type="button" value="Login" id="loginButton" onclick="doLogin();">Login</button>
+        <span id = "loginResult"></span>
+      
 </div>
 </div>
 
