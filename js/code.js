@@ -1,4 +1,4 @@
-var urlBase = 'https//:www.keepcont4ct.tech/LAMPAPI';
+var urlBase = 'http://www.keepcont4ct.tech/LAMPAPI';
 var extension = 'php';
 
 var userId = 0;
