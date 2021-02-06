@@ -18,7 +18,7 @@
 		// inserts data from json file into database
 		$sql = "INSERT into ContactInfo (FirstName,LastName,PhoneNumber,Email,UserID) VALUES (?,?,?,?,?)";
 		$sql = $conn->prepare($sql);
-		$sql->bind_param("ssisi", $FirstName, $LastName, $PhoneNumber, $Email, $UserID);
+		$sql->bind_param("sssssi", $FirstName, $LastName, $PhoneNumber, $Email, $UserID);
 		$sql->execute();
 		if($sql->execute() == FALSE)
 		{
