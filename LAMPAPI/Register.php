@@ -54,7 +54,7 @@
         $retObj->lastName = $lName;
         $retObj->id = $id;
 
-        $retObj = json_encode($retObj);
+        $retValue = json_encode($retObj);
 
 		sendResultInfoAsJson( $retValue );
 	}
