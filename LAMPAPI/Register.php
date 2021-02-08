@@ -53,6 +53,7 @@
 		$retObj->firstName = $fName;
         $retObj->lastName = $lName;
         $retObj->id = $id;
+        $retObj->error = "";
 
         $retValue = json_encode($retObj);
 
