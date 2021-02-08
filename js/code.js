@@ -65,7 +65,7 @@ function register()
 	password = document.getElementById("pass").value;
 
 
-	if(firstName.length > 0 && lastName.length > 0 && userName.length > 0 && password.length > 0)
+	if(firstName.length > 0 && lastName.length > 0 && login.length > 0 && password.length > 0)
 	{
 
 		var hash = md5( password );
