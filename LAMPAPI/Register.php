@@ -50,7 +50,7 @@
     }
     
     function returnWithInfo( $fName, $lName, $id){
-		$retObj->firstName = $firstName;
+		$retObj->firstName = $fName;
         $retObj->lastName = $lName;
         $retObj->id = $id;
 
