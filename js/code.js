@@ -70,6 +70,8 @@ function register()
 
 		var hash = md5( password );
 		var jsonPayload = '{"firstName" : "' + firstName + '", "lastName" : "' + lastName + '", "login" : "' + login + '", "password" : "' + hash + '"}';
+
+		var url = urlBase + '/Register' + extension;
 		
 		var xhr = new XMLHttpRequest();
 		xhr.open("POST", url, false);
@@ -83,7 +85,7 @@ function register()
 		{
 			userId = jsonObject.id;
 			saveCookie();
-			
+
 			window.location.replace("http://www.keepcont4ct.tech/dashboard.html");
 
 		}
