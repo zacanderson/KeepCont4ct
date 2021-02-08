@@ -71,7 +71,7 @@ function register()
 		var hash = md5( password );
 		var jsonPayload = '{"firstName" : "' + firstName + '", "lastName" : "' + lastName + '", "login" : "' + login + '", "password" : "' + hash + '"}';
 
-		var url = urlBase + '/Register' + extension;
+		var url = urlBase + '/Register.' + extension;
 		
 		var xhr = new XMLHttpRequest();
 		xhr.open("POST", url, false);
