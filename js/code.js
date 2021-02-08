@@ -81,7 +81,9 @@ function register()
 		var jsonObject = JSON.parse(xhr.responseText);
 
 
-		if(!!jsonObject.error)
+		var error = jsonObject.error;
+    
+		if(error.length == 0)
 		{
 			userId = jsonObject.id;
 			saveCookie();
