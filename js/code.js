@@ -52,6 +52,50 @@ function doLogin()
 
 }
 
+
+function register()
+{
+
+	var login, password;
+
+	
+	firstName = document.getElementById("fname").value;
+	lastName = document.getElementById("lname").value;
+	login = document.getElementById("uname").value;
+	password = document.getElementById("pass").value;
+
+
+	if(firstName.length > 0 && lastName > 0 && userName > 0 && password > 0)
+	{
+
+		var hash = md5( password );
+		var jsonPayload = '{"firstName" : "' + firstName + '", "lastName" : "' + lastName + '", "login" : "' + login + '", "password" : "' + hash + '"}';
+		
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", url, false);
+		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+		xhr.send(jsonPayload);
+		
+		var jsonObject = JSON.parse(xhr.responseText);
+
+
+		if(!!jsonObject.error)
+		{
+			userId = jsonObject.id;
+			saveCookie();
+			
+			window.location.replace("http://www.keepcont4ct.tech/dashboard.html");
+
+		}
+		
+
+
+	}
+
+
+
+}
+
 function saveCookie()
 {
 	var minutes = 20;
