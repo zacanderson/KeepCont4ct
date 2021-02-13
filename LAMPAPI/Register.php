@@ -27,7 +27,7 @@
             $sql = "INSERT INTO Users(firstName, lastName, Login, Password) VALUES ('".$inData["firstName"]."', '". $inData["lastName"] . "', '" . $inData["login"] . "', '" . $inData["password"] . "')";
             $result = $conn->query($sql);
 
-            returnWithInfo($firstName, $lastName);
+            returnWithInfo($firstName, $lastName, $conn->insert_id);
 
         }
     }
@@ -49,8 +49,14 @@
         
     }
     
-    function returnWithInfo( $firstName, $lastName){
-		$retValue = '{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
+    function returnWithInfo( $fName, $lName, $id){
+		$retObj->firstName = $fName;
+        $retObj->lastName = $lName;
+        $retObj->id = $id;
+        $retObj->error = "";
+
+        $retValue = json_encode($retObj);
+
 		sendResultInfoAsJson( $retValue );
 	}
 
