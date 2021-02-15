@@ -2,9 +2,11 @@ body
 {
     text-align:center;
     margin: 0;
-
-
+    background-image: url(images/background2.jpg);
 }
+
+/*still need to go over css to delete obsolete attributes*/
+
 label
 {
     border-radius: 0px;
@@ -23,23 +25,18 @@ header
     background-color: black;
     padding: 1%;
     z-index:1000;
-    border-radius: 60px;
-
-
-
+    /*border-radius: 60px;*/
 }
 
 .HeaderLogo {
     text-align: center;
     margin: 0 auto;
     width:10%;
-
 }
 
 
 #dashDiv
 {
-   
     width: 80%;
     height: 80%;
     background-color: #f1ece7;
@@ -53,11 +50,9 @@ header
     margin: auto;
     margin-top: 10%;
     margin-bottom: 10%;
-   
-
 }
 
-#loginDiv
+#searchDiv
 {
     font-size: 30px;
     width: 30%;
@@ -70,12 +65,8 @@ header
     margin-left: 10%;
     vertical-align:top;
     margin-top: 5%;
-    
-
-
-
-
 }
+
 #addDiv
 {
     font-size: 30px;
@@ -89,9 +80,6 @@ header
     margin-top: 0%;
     vertical-align:top;
     margin-top: 5%;
-
-
-
 }
 
 #loggedInDiv
@@ -102,12 +90,10 @@ header
     padding: 25px;
     background-color: #b2b2b2;
     border: 5px solid gray;
-
 }
+
 .vl 
 {
-    
- 
   height: 75%;
   border: 1px solid rgb(85, 85, 85);
     display: inline-block;
@@ -115,11 +101,6 @@ header
     margin: auto;
     margin-top: 5%;
     margin-left: 10%;
-
-    
-    
-    
-    
 }
 
 #accessUIDiv
@@ -133,17 +114,30 @@ header
 
 .buttons
 {
+    /*
     font-size: 30px;
     border-radius: 25px;
     width: 50%;
     margin-left: 25%;
     font-family: 'Ubuntu', sans-serif;
+    */
+    /*copy from input type=submit*/
+    background-color: aquamarine;
+    color: black;
+    width: 80%;
+    height: 9%;
 }
 
 .buttons:hover{
+    /*
     background-color: #00d5124f;
     color: #FFFFFF;
     opacity: 50%;
+    */
+    /*copy from input type=submit:hover*/
+    background-color: #ffffff; /* Green */
+    color: aquamarine;
+    border-color: aquamarine;
 }
 
 #loginName
@@ -172,7 +166,7 @@ input[type="text"],input[type="password"]{
     font-family: 'Ubuntu', sans-serif;
 }
 
-#loginButton, #registerButton
+input[type="submit"]
 {
     background-color: aquamarine;
     color: black;
@@ -180,7 +174,7 @@ input[type="text"],input[type="password"]{
     height: 9%;
 }
 
-#loginButton:hover, #registerButton:hover  {
+input[type="submit"]:hover {
     background-color: #ffffff; /* Green */
     color: aquamarine;
     border-color: aquamarine;
@@ -242,3 +236,75 @@ select{
     font-family: 'Ubuntu', sans-serif;
     color: #95060a;
 }
+
+/*from dashboard.css*/
+#mainHeader{
+    /*what ever you add here spans the page*/
+    margin: 0;
+    text-align: center;
+  }
+  
+  .container{
+    width: 95%;
+    /*this might be what's doing the wierd margin thing since container wraps everything*/
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  a:link, a:visited{
+    color:black;
+    text-decoration: none;
+  }
+  
+  a:hover{
+    color: #AAF4CC;
+  }
+  
+  h1{
+    background: #E7DDD3;
+    border-radius: 30px;
+    /*
+    border:10px solid black;
+    */
+    /*display: inline-block;---crops width to content---*/
+    margin-top: 10%;
+    margin-bottom: 10px;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 50%;
+    padding: 0% 5% 5% 5%;
+    margin: 1%;
+    background: #AAF4CC;
+    border-radius: 25px;
+    text-align: center;
+  }
+  
+  .contactField{
+    /*background: #E7DDD3;*/
+    padding: 3% 0%;
+    border-radius: 25px;
+  }
+  
+  #window{
+    background: #AAF4CC;
+    border-radius: 25px;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 7% 0%;
+  }
+  
+  #actionButtons{
+    /*use to separate buttons*/
+  }
+
+  /*----for mobile responsiveness----*/
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
