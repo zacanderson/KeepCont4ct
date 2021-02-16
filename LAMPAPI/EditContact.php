@@ -22,8 +22,7 @@
         
         $sql->execute();
 
-        $result = $sql->get_result();
-        if($result->affected_rows > 0){
+        if($sql->affected_rows > 0){
             returnWithInfo($firstName, $lastName, $id);
 
         }else{
