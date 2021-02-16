@@ -291,7 +291,7 @@ function initialSearch () {
 	
 	var srch = document.getElementById("searchText").value;
 	
-	window.location.replace("http://www.keepcont4ct.tech/index.html/search2.html?" + srch);
+	window.location.replace("http://www.keepcont4ct.tech/search2.html?" + srch);
 
 }
 
