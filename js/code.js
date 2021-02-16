@@ -41,7 +41,7 @@ function doLogin() {
 		saveCookie();
 		// change redirect to landing page (still needs to be created)
 
-		window.location.replace("/dashboard.html");
+		window.location.replace("https://keep-cont-4-ct-57rho.ondigitalocean.app/dashboard.html");
 
 	}
 	catch (err) {
@@ -83,7 +83,7 @@ function register() {
 			userId = jsonObject.id;
 			saveCookie();
 
-			window.location.replace("/dashboard.html");
+			window.location.replace("https://keep-cont-4-ct-57rho.ondigitalocean.app/dashboard.html");
 
 		}
 
@@ -134,7 +134,7 @@ function doLogout() {
 	firstName = "";
 	lastName = "";
 	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-	window.location.replace("/index.html");
+	window.location.replace("https://keep-cont-4-ct-57rho.ondigitalocean.app/index.html");
 }
 
 function addContact() {
@@ -292,7 +292,7 @@ function initialSearch () {
 	
 	var srch = document.getElementById("searchText").value;
 	
-	window.location.replace("/search2.html?" + srch);
+	window.location.replace("https://keep-cont-4-ct-57rho.ondigitalocean.app/search2.html?" + srch);
 
 }
 
