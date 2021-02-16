@@ -5,6 +5,20 @@ body
     background-image: url(images/background2.jpg);
 }
 
+
+#sContent::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+#sContent::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+#sContent::-webkit-scrollbar-thumb {
+  background-color: aquamarine;
+  outline: 1px solid rgb(0, 0, 0);
+}
+
 /*still need to go over css to delete obsolete attributes*/
 
 label
@@ -35,7 +49,7 @@ header
 }
 
 
-#dashDiv
+#frontDiv
 {
     width: 80%;
     height: 80%;
@@ -52,6 +66,66 @@ header
     margin-bottom: 10%;
 }
 
+.cBox
+{
+  display: inline-block;
+	width: 32%;
+  height: 30;
+  vertical-align: middle;
+  margin-top: 13;
+	text-align: center;
+  position: relative;
+
+} 
+
+.contactsBox  {
+	background-color: lightgrey;
+	width: 97%;
+	height: 50px;
+	
+  margin-top: 20px;
+  margin-bottom: 20px;
+	padding: 0px;
+	align-items: flex;
+	overflow: hidden;
+	border: 1.5px solid rgb(31, 223, 248);
+  text-align: center;
+  border-radius: 25px;
+}
+
+#sDiv
+{
+    width: 80%;
+    height: 80%;
+    background-color: aquamarine;
+    position:fixed;
+   
+   border-width: 3px;
+   border-style:solid;
+   border-color: aquamarine;
+    border-radius: 25px;
+    text-align:center;
+    
+    margin: auto;
+    margin-top: 10%;
+    float: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    border-radius: 25px;
+    
+    
+}
+
+#sContent
+{
+  height: 97%;
+  margin-top: 2px;
+  width: 60%;
+   overflow:auto;
+   border-radius: 25px;
+}
+
 #loginDiv
 {
     font-size: 30px;
@@ -66,6 +140,27 @@ header
     vertical-align:top;
     margin-top: 5%;
 }
+
+
+.search {
+  background-color: aquamarine;
+  width: 80%;
+  border-radius: 25px;
+  
+}
+	
+	#inpt_search {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    font-size: 21;
+    background: transparent;
+    border-bottom: 1px solid black
+    
+    
+	}
+
+
 
 #addDiv
 {
@@ -258,12 +353,14 @@ select{
   }
   
   .column {
+    
     flex: 50%;
     padding: 0% 5% 5% 5%;
     margin: 1%;
     background: #AAF4CC;
     border-radius: 25px;
     text-align: center;
+    
   }
   
   .contactField{
