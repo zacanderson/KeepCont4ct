@@ -1,4 +1,4 @@
-var urlBase = 'https://http://www.keepcont4ct.tech';
+var urlBase = 'https://www.keepcont4ct.tech';
 var extension = 'php';
 
 var userId = 0;
@@ -41,7 +41,7 @@ function doLogin() {
 		saveCookie();
 		// change redirect to landing page (still needs to be created)
 
-		window.location.replace("https://http://www.keepcont4ct.tech/dashboard.html");
+		window.location.replace("https://www.keepcont4ct.tech/dashboard.html");
 
 	}
 	catch (err) {
@@ -83,7 +83,7 @@ function register() {
 			userId = jsonObject.id;
 			saveCookie();
 
-			window.location.replace("https://http://www.keepcont4ct.tech/dashboard.html");
+			window.location.replace("https://www.keepcont4ct.tech/dashboard.html");
 
 		}
 
@@ -134,7 +134,7 @@ function doLogout() {
 	firstName = "";
 	lastName = "";
 	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-	window.location.replace("https://http://www.keepcont4ct.tech/index.html");
+	window.location.replace("https://www.keepcont4ct.tech/index.html");
 }
 
 function addContact() {
@@ -292,7 +292,7 @@ function initialSearch () {
 	
 	var srch = document.getElementById("searchText").value;
 	
-	window.location.replace("https://http://www.keepcont4ct.tech/search2.html?" + srch);
+	window.location.replace("http://www.keepcont4ct.tech/search2.html?" + srch);
 
 }
 
