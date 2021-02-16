@@ -43,7 +43,9 @@ function doLogin()
 
 		saveCookie();
 		// change redirect to landing page (still needs to be created)
+
 		window.location.replace("http://www.keepcont4ct.tech/dashboard.html");
+		
 	}
 	catch(err)
 	{
@@ -152,14 +154,22 @@ function doLogout()
 
 function addContact()
 {
-	var newContact = document.getElementById("contactText").value;
+
 	document.getElementById("contactAddResult").innerHTML = "";
+
 	
-	var jsonPayload = '{"contact" : "' + newContact + '", "userId" : ' + userId + '}';
+
+	firstName = document.getElementById("fname").value;
+	lastName = document.getElementById("lname").value;
+	phoneNumber = document.getElementById("phonenum").value;
+	email = document.getElementById("email").value;
+	
+	var jsonPayload = '{"FirstName" : "' + firstName + '", "LastName" : "' + lastName + '", "PhoneNumber" : "' + phoneNumber + '", "Email" : "' + email + '", "UserID" : "' + userId + '"}';
+
 	var url = urlBase + '/AddContact.' + extension;
 	
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
+	xhr.open("POST", url, false);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	try
 	{
@@ -170,7 +180,9 @@ function addContact()
 				document.getElementById("contactAddResult").innerHTML = "Contact(s) added";
 			}
 		};
+		
 		xhr.send(jsonPayload);
+
 	}
 	catch(err)
 	{
@@ -190,7 +202,7 @@ function searchContacts()
 	var url = urlBase + '/SearchContacts.' + extension;
 	
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
+	xhr.open("POST", url, false);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	try
 	{
@@ -213,6 +225,8 @@ function searchContacts()
 				document.getElementsByTagName("p")[0].innerHTML = contactList;
 			}
 		};
+
+		
 		xhr.send(jsonPayload);
 	}
 	catch(err)

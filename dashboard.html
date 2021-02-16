@@ -25,23 +25,27 @@
       <div class="column">
         <h3>Add a Contact</h3>
         <!--add form-->
-        <form action="/action_page.php">
+        
           <input type="text" id="fname" name="fname" placeholder="First Name"><br>
           <input type="text" id="lname" name="lname" placeholder="Last Name"><br>
           <input type="text" id="phonenum" name="phonenum" placeholder="Phone Number"><br>
           <input type="text" id="email" name="email" placeholder="Email"><br>
-          <input type="submit" value="Add">
-        </form>
+          
+          <button type="button" value="Register" id ="addButton" onclick="addContact()">Add</button>
+          <span id="contactAddResult"></span>
+
+        
       </div>
 
       <div class="column">
         <h3>Search For Contact</h3>
         <!--search form-->
-        <form action="/action_page.php">
-          <input type="text" id="fname" name="fname" placeholder="First Name"><br>
-          <input type="text" id="lname" name="lname" placeholder="Last Name"><br>
-          <input type="submit" value="Search">
-        </form>
+        
+          <input type="text" id="searchText" name="fname" placeholder="First Name"><br>
+          <input type="text" id="lastName" name="lname" placeholder="Last Name"><br>
+          <button type="button" value="Register" id ="searchButton" onclick="searchContacts()">Search</button>
+          <span id="contactSearchResult"></span>
+       
       </div>
     </div>
   </div>
