@@ -23,10 +23,11 @@
         $sql->execute();
 
         $result = $sql->get_result();
-        if($result->num_rows > 0){
+        if($result->affected_rows > 0){
             returnWithInfo($firstName, $lastName, $id);
+            
         }else{
-            returnWithError("You do not have permission to change that contact");
+            returnWithError("You do not have permission to change that");
 
         }
 
