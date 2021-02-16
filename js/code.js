@@ -191,47 +191,80 @@ function addContact()
 	
 }
 
-function searchContacts()
-{
-	var srch = document.getElementById("searchText").value;
-	document.getElementById("contactSearchResult").innerHTML = "";
+
+
+function searchContacts() {
+
+
+
+
 	
+
+	var srch = document.getElementById("inpt_search").value;
+//	document.getElementById("contactSearchResult").innerHTML = "";
+
+
+	
+
+
 	var contactList = "";
-	
+
 	var jsonPayload = '{"search" : "' + srch + '","userId" : ' + userId + '}';
 	var url = urlBase + '/SearchContacts.' + extension;
-	
+
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, false);
+	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	try
-	{
-		xhr.onreadystatechange = function() 
-		{
-			if (this.readyState == 4 && this.status == 200) 
-			{
-				document.getElementById("contactSearchResult").innerHTML = "Contact(s) retrieved";
-				var jsonObject = JSON.parse( xhr.responseText );
+	try {
+		xhr.onreadystatechange = function () {
+			if (this.readyState == 4 && this.status == 200) {
+				//document.getElementById("contactSearchResult").innerHTML = "Contact(s) retrieved";
+				var jsonObject = JSON.parse(xhr.responseText);
+
+				const contactInfo = document.querySelector('#contactInfo');
+
 				
-				for( var i=0; i<jsonObject.results.length; i++ )
-				{
-					contactList += jsonObject.results[i];
-					if( i < jsonObject.results.length - 1 )
-					{
-						contactList += "<br />\r\n";
-					}
+
+
+				while (contactInfo.firstChild) {
+					contactInfo.removeChild(contactInfo.firstChild);
 				}
-				
-				document.getElementsByTagName("p")[0].innerHTML = contactList;
+
+
+
+
+
+
+
+				for (var i = 0; i < jsonObject.results.length; i++) {
+					contactList += jsonObject.results[i];
+
+
+					const elem = document.createElement('div');
+					elem.className = "contactsBox";
+					const elemTextBox = document.createElement('div');
+					elemTextBox.className = "cBox";
+
+					const elemText = document.createTextNode(jsonObject.results[i]);
+					elemTextBox.appendChild(elemText);
+					elem.appendChild(elemTextBox);
+					document.getElementById("contactInfo").appendChild(elem);
+
+				//	if (i < jsonObject.results.length - 1) {
+					//	contactList += "<br />\r\n";
+					//}
+				}
+
+				//document.getElementsByTagName("p")[0].innerHTML = contactList;
 			}
 		};
 
-		
+
 		xhr.send(jsonPayload);
 	}
-	catch(err)
-	{
-		document.getElementById("contactSearchResult").innerHTML = err.message;
+	catch (err) {
+		//document.getElementById("contactSearchResult").innerHTML = err.message;
 	}
-	
+
 }
+
