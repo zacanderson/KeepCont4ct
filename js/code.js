@@ -268,3 +268,18 @@ function searchContacts() {
 
 }
 
+function initialSearch () {
+	
+	var srch = document.getElementById("searchText").value;
+	
+	window.location.replace("http://www.keepcont4ct.tech/search2.html?" + srch);
+
+}
+
+function fillSearchBar () {
+	const queryString = location.search.substring(1);
+	const qString = document.createTextNode(queryString);
+	document.getElementById("inpt_search").value = "" + queryString;
+	searchContacts();
+}
+
