@@ -18,14 +18,14 @@
     }else{
         $sql = "UPDATE ContactInfo SET firstName = ?, lastName = ?, email= ?, phoneNumber= ? WHERE ID = ? AND UserID = ?";
         $sql = $conn->prepare($sql);
-        $sql->bind_param("ssssi", $firstName, $lastName, $email, $phoneNumber, $id, $userID);
+        $sql->bind_param("ssssii", $firstName, $lastName, $email, $phoneNumber, $id, $userID);
         
         $sql->execute();
 
         $result = $sql->get_result();
         if($result->affected_rows > 0){
             returnWithInfo($firstName, $lastName, $id);
-            
+
         }else{
             returnWithError("You do not have permission to change that");
 
