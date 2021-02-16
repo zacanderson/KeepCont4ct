@@ -103,6 +103,7 @@ function saveCookie() {
 }
 
 function readCookie() {
+	
 	userId = -1;
 	var data = document.cookie;
 	var splits = data.split(",");
@@ -124,7 +125,7 @@ function readCookie() {
 		window.location.href = "index.html";
 	}
 	else {
-		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
+		document.getElementById("userName").innerHTML = "" + firstName + " " + lastName;
 	}
 }
 
@@ -152,7 +153,7 @@ function addContact() {
 	var url = urlBase + '/AddContact.' + extension;
 
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, false);
+	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	try {
 		xhr.onreadystatechange = function () {
@@ -190,7 +191,7 @@ function searchContacts() {
 	var url = urlBase + '/SearchContacts.' + extension;
 
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, false);
+	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	try {
 		xhr.onreadystatechange = function () {
