@@ -82,15 +82,7 @@ header
     margin-top: 5%;
 }
 
-#loginDiv
-{
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-    background-color: #b2b2b2;
-    border: 5px solid gray;
-}
+
 
 .vl 
 {
@@ -112,7 +104,7 @@ header
     background-color: #b2b2b2;
 }
 
-.buttons
+#registerButton, #loginButton
 {
     /*
     font-size: 30px;
@@ -128,7 +120,7 @@ header
     height: 9%;
 }
 
-.buttons:hover{
+#registerButton:hover, #loginButton:hover{
     /*
     background-color: #00d5124f;
     color: #FFFFFF;
@@ -140,14 +132,7 @@ header
     border-color: aquamarine;
 }
 
-#loginName
-{
-	font-size: 30px;
-}
-#loginPassword
-{
-	font-size: 30px;
-}
+
 #searchText
 {
 	font-size: 30px;
