@@ -19,7 +19,6 @@
 		$sql = "INSERT into ContactInfo (FirstName,LastName,PhoneNumber,Email,UserID) VALUES (?,?,?,?,?)";
 		$sql = $conn->prepare($sql);
 		$sql->bind_param("ssssi", $FirstName, $LastName, $PhoneNumber, $Email, $UserID);
-		$sql->execute();
 		if($sql->execute() == FALSE)
 		{
 			returnWithError( $conn->error);
