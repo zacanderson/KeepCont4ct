@@ -164,7 +164,7 @@ function addContact()
 	phoneNumber = document.getElementById("phonenum").value;
 	email = document.getElementById("email").value;
 	
-	var jsonPayload = '{"FirstName" : "' + firstName + '", "LastName" : "' + lastName + '", "PhoneNumber" : "' + phoneNumber + '", "Email" : "' + email + '", "UserID" : "' + userId + '"}';
+	var jsonPayload = '{"FirstName" : "' + firstName + '", "LastName" : "' + lastName + '", "PhoneNumber" : "' + phoneNumber + '", "Email" : "' + email + '", "UserID" : ' + userId + '}';
 
 	var url = urlBase + '/AddContact.' + extension;
 	
