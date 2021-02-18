@@ -248,7 +248,7 @@ function searchContacts() {
 						const elemTextNum = document.createTextNode(res[2]);
 
 						elemTextBoxName.appendChild(elemTextName);
-						elemTextBoxName.appendChild(elemTextNum);
+						elemTextBoxNum.appendChild(elemTextNum);
 
 						elem.appendChild(elemTextBoxName);
 						elem.appendChild(elemTextBoxNum);
