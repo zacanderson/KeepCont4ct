@@ -247,7 +247,7 @@ function searchContacts() {
 
 						cB = cB + "<div class=\"contactsBox\" id=\""
 						+res[4] + "-"+ fName+"\" onclick=\"showPopUp("+res[4]+")\">"+
-						"<cBox>"+ res[0]+" "+res[1]+"</cBox><cBox>"+res[2]+"</cBox>"+"</div>"
+						"<div class=\"cBox\">"+ res[0]+" "+res[1]+"</div><div class=\"cBox\" >"+res[2]+"</div>"+"</div>"
 
 						//elem.className = "contactsBox";
 						//elem.id = res[4] + "-"+ fName;
@@ -256,7 +256,7 @@ function searchContacts() {
 						//const elemTextBoxName = document.createElement('div');
 						//elemTextBoxName.className = "cBox";
 						//const elemTextBoxNum = document.createElement('div');
-						//elemTextBoxNum.className = "cBox";
+						//elemTextBoxNum.className = "cBox"; 
 
 
 						//const elemTextName = document.createTextNode(res[0] + " " + res[1]);
@@ -271,7 +271,7 @@ function searchContacts() {
 						const popUpBox = document.createElement('div');
 						popUpBox.className = "modal-content";
 						popUpBox.id = res[4];
-						popUpBox.appendChild(document.createTextNode(jsonObject.results[i]));
+						//popUpBox.appendChild(document.createTextNode(jsonObject.results[i]));
 
 
 
@@ -282,6 +282,9 @@ function searchContacts() {
 						//	if (i < jsonObject.results.length - 1) {
 						//	contactList += "<br />\r\n";
 						//}
+
+						document.getElementById(""+res[4]).innerHTML = "<span class=\"close\" onclick=\"closePopUp()\">&times;</span><h1>"+fName+" "+lName+"</h1><br><h2>number: "+pNum+"</h2><h2>email: "+email+"</h2><h3>note: </h3>"
+
 					}
 
 					document.getElementById("contactInfo").innerHTML = cB;
@@ -326,6 +329,13 @@ function showPopUp(idNum) {
 
 }
 
+function closePopUp() {
+
+	var modal = document.getElementById("myModal");
+	modal.style.display = "none";
+
+}
+
 function test() {
 	var cB = "";
 	for (var i =0; i < 5; i++)
@@ -336,5 +346,6 @@ function test() {
 
 	document.getElementById("contactInfo").innerHTML = cB;
 
+	mInfo = "<span class=\"close\" onclick=\"closePopUp()\">&times;</span><h1>"+fName+" "+lName+"</h1><br><h2>number: "+pNum+"</h2><h2>email: "+email+"</h2><h3>note: </h3>"
 }
 
