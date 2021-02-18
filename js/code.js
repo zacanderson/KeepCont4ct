@@ -227,15 +227,32 @@ function searchContacts() {
 					for (var i = 0; i < jsonObject.results.length; i++) {
 						contactList += jsonObject.results[i];
 
+						var res = jsonObject.results[i].split("|");
+						var fName = res[0];
+						var lName = res[1];
+						var pNum = res[2];
+						var email = res[3];
+						var ID = res[4];
 
 						const elem = document.createElement('div');
 						elem.className = "contactsBox";
-						const elemTextBox = document.createElement('div');
-						elemTextBox.className = "cBox";
+						elem.id = res[4];
+						//elem.onclick = popUp(res[4]);
+						const elemTextBoxName = document.createElement('div');
+						elemTextBoxName.className = "cBox";
+						const elemTextBoxNum = document.createElement('div');
+						elemTextBoxNum.className = "cBox";
 
-						const elemText = document.createTextNode(jsonObject.results[i]);
-						elemTextBox.appendChild(elemText);
-						elem.appendChild(elemTextBox);
+
+						const elemTextName = document.createTextNode(res[0] + " " + res[1]);
+						const elemTextNum = document.createTextNode(res[2]);
+
+						elemTextBoxName.appendChild(elemTextName);
+						elemTextBoxName.appendChild(elemTextNum);
+
+						elem.appendChild(elemTextBoxName);
+						elem.appendChild(elemTextBoxNum);
+
 						document.getElementById("contactInfo").appendChild(elem);
 
 						//	if (i < jsonObject.results.length - 1) {
@@ -271,3 +288,7 @@ function fillSearchBar() {
 	searchContacts();
 }
 
+function popUp(ID) {
+
+
+}

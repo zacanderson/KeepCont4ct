@@ -7,16 +7,19 @@ body
 
 
 #sContent::-webkit-scrollbar {
-  width: 1em;
+  width: 0.5em;
+  border-radius: 25px;
 }
  
 #sContent::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+  border-radius: 0px;
 }
  
 #sContent::-webkit-scrollbar-thumb {
   background-color: aquamarine;
-  outline: 1px solid rgb(0, 0, 0);
+  
+  border-radius: 0px;
 }
 
 /*still need to go over css to delete obsolete attributes*/
@@ -77,27 +80,31 @@ header
   position: relative;
 
 } 
+.contactsBox:hover
+{
+  background-color: #d6d6d6;
+}
 
 .contactsBox  {
-	background-color: lightgrey;
-	width: 97%;
-	height: 50px;
+	background-color: rgb(255, 255, 255);
+	width: 99.9%;
+	height: 56px;
 	
-  margin-top: 20px;
-  margin-bottom: 20px;
+  
+ 
 	padding: 0px;
 	align-items: flex;
 	overflow: hidden;
-	border: 1.5px solid rgb(31, 223, 248);
+	border-bottom: 1.5px solid rgb(134, 134, 134);
   text-align: center;
-  border-radius: 25px;
+  
 }
 
 #sDiv
 {
-    width: 80%;
+    width: 50%;
     height: 80%;
-    background-color: aquamarine;
+    background-color: rgb(255, 255, 255);
     position:fixed;
    
    border-width: 3px;
@@ -113,17 +120,21 @@ header
     left: 50%;
     transform: translate(-50%, -70%);
     border-radius: 25px;
+    opacity: 0.8;
+
     
     
 }
 
 #sContent
 {
-  height: 97%;
-  margin-top: 2px;
-  width: 60%;
+  height: 85%;
+  margin-top: 0;
+  width: 100%;
    overflow:auto;
-   border-radius: 25px;
+   
+   background-color: rgb(255, 255, 255);
+   
 }
 
 #loginDiv
@@ -143,9 +154,15 @@ header
 
 
 .search {
-  background-color: aquamarine;
+  background-color: rgb(255, 255, 255);
   width: 80%;
   border-radius: 25px;
+  margin-top: 1%;
+  margin-left: 9%;
+
+
+  
+ 
   
 }
 	
@@ -153,9 +170,14 @@ header
     border: 0;
     outline: 0;
     width: 100%;
+    
     font-size: 21;
     background: transparent;
-    border-bottom: 1px solid black
+    border-bottom: 1px solid black;
+    
+
+
+    
     
     
 	}
@@ -387,3 +409,42 @@ select{
       width: 100%;
     }
   }
+
+ 
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
