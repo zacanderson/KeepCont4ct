@@ -228,7 +228,7 @@ function searchContacts() {
 
 
 
-
+					var cB = "";
 
 
 					for (var i = 0; i < jsonObject.results.length; i++) {
@@ -243,27 +243,30 @@ function searchContacts() {
 
 						const elem = document.createElement('div');
 
-						
+						document.getElementById("contactInfo").innerHTML = cB;
 
+						cB = cB + "<div class=\"contactsBox\" id=\""
+						+res[4] + "-"+ fName+"\" onclick=\"showPopUp("+res[4]+")\">"+
+						"<cBox>"+ res[0]+" "+res[1]+"</cBox><cBox>"+res[2]+"</cBox>"+"</div>"
 
-						elem.className = "contactsBox";
-						elem.id = res[4] + "-"+ fName;
-						elem.onclick = "showPopUp(105)";
+						//elem.className = "contactsBox";
+						//elem.id = res[4] + "-"+ fName;
+						//elem.onclick = "showPopUp(105)";
 						//elem.addEventListener("click",showPopUp(res[4], false) );
-						const elemTextBoxName = document.createElement('div');
-						elemTextBoxName.className = "cBox";
-						const elemTextBoxNum = document.createElement('div');
-						elemTextBoxNum.className = "cBox";
+						//const elemTextBoxName = document.createElement('div');
+						//elemTextBoxName.className = "cBox";
+						//const elemTextBoxNum = document.createElement('div');
+						//elemTextBoxNum.className = "cBox";
 
 
-						const elemTextName = document.createTextNode(res[0] + " " + res[1]);
-						const elemTextNum = document.createTextNode(res[2]);
+						//const elemTextName = document.createTextNode(res[0] + " " + res[1]);
+						//const elemTextNum = document.createTextNode(res[2]);
 
-						elemTextBoxName.appendChild(elemTextName);
-						elemTextBoxNum.appendChild(elemTextNum);
+						//elemTextBoxName.appendChild(elemTextName);
+						//elemTextBoxNum.appendChild(elemTextNum);
 
-						elem.appendChild(elemTextBoxName);
-						elem.appendChild(elemTextBoxNum);
+						//elem.appendChild(elemTextBoxName);
+						//elem.appendChild(elemTextBoxNum);
 
 						const popUpBox = document.createElement('div');
 						popUpBox.className = "modal-content";
@@ -281,7 +284,7 @@ function searchContacts() {
 						//}
 					}
 
-					//document.getElementsByTagName("p")[0].innerHTML = contactList;
+					document.getElementById("contactInfo").innerHTML = cB;
 				}
 			};
 
@@ -309,14 +312,29 @@ function fillSearchBar() {
 	searchContacts();
 }
 
-function showPopUp(ID) {
+function showPopUp(idNum) {
 
 	var modal = document.getElementById("myModal");
-	var modalInfo = document.getElementById(ID);
+	var modal2 = document.getElementById(""+idNum);
+
+	//var modalInfo = document.getElementById("modal-content");
+
+	modal2.style.display = "block";
 
 	modal.style.display = "block";
-	modalInfo.style.display = "block";
+	//modalInfo.style.display = "block";
 
 }
 
+function test() {
+	var cB = "";
+	for (var i =0; i < 5; i++)
+{
+	cB = cB + "<div class=\"contactsBox\" id=\""+"105" + "-"+ "fName"+"\" onclick=\"showPopUp("+")\"></div>";
+
+}
+
+	document.getElementById("contactInfo").innerHTML = cB;
+
+}
 
