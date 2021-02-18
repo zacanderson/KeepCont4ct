@@ -248,8 +248,8 @@ function searchContacts() {
 
 						elem.className = "contactsBox";
 						elem.id = res[4] + "-"+ fName;
-						//elem.onclick(showPopUp(res[4]));
-						elem.addEventListener("click",showPopUp(res[4], false) );
+						elem.onclick("showPopUp(105)");
+						//elem.addEventListener("click",showPopUp(res[4], false) );
 						const elemTextBoxName = document.createElement('div');
 						elemTextBoxName.className = "cBox";
 						const elemTextBoxNum = document.createElement('div');
