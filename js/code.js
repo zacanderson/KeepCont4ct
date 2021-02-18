@@ -307,7 +307,7 @@ function fillSearchBar() {
 function showPopUp(ID) {
 
 	var modal = document.getElementById("myModal");
-	var modalInfo = document.getElementsById(ID);
+	var modalInfo = document.getElementById(ID);
 
 	modal.style.display = "block";
 	modalInfo.style.display = "block";
