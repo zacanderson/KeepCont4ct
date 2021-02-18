@@ -283,7 +283,7 @@ function searchContacts() {
 						//	contactList += "<br />\r\n";
 						//}
 
-						document.getElementById(""+res[4]).innerHTML = "<span class=\"close\" onclick=\"closePopUp()\">&times;</span><h1>"+fName+" "+lName+"</h1><br><h2>number: "+pNum+"</h2><h2>email: "+email+"</h2><h3>note: </h3>"
+						document.getElementById(""+res[4]).innerHTML = "<span class=\"close\" onclick=\"closePopUp("+res[4]+")\">&times;</span><h1>"+fName+" "+lName+"</h1><br><h2>number: "+pNum+"</h2><h2>email: "+email+"</h2><h3>note: </h3>"
 
 					}
 
@@ -329,9 +329,15 @@ function showPopUp(idNum) {
 
 }
 
-function closePopUp() {
+function closePopUp(idNum) {
 
 	var modal = document.getElementById("myModal");
+	var modal2 = document.getElementById(""+idNum);
+
+	//var modalInfo = document.getElementById("modal-content");
+
+	modal2.style.display = "none";
+
 	modal.style.display = "none";
 
 }
