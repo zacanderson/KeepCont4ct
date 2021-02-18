@@ -242,9 +242,13 @@ function searchContacts() {
 						var ID = res[4];
 
 						const elem = document.createElement('div');
+
+						
+
+
 						elem.className = "contactsBox";
 						elem.id = res[4] + "-"+ fName;
-						elem.onclick = showPopUp(res[4]);
+						elem.onclick = "showPopUp("+res[4]+")";
 						const elemTextBoxName = document.createElement('div');
 						elemTextBoxName.className = "cBox";
 						const elemTextBoxNum = document.createElement('div');
