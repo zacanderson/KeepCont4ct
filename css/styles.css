@@ -412,7 +412,7 @@ select{
 
  
 .modal {
-  display: block; /* Hidden by default */
+  display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
@@ -427,6 +427,7 @@ select{
 
 /* Modal Content */
 .modal-content {
+  display: none;
   background-color: #fefefe;
   margin: auto;
   padding: 20px;

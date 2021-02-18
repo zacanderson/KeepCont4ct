@@ -197,8 +197,12 @@ function searchContacts() {
 
 	if (srch === "") {
 		const contactInfo = document.querySelector('#contactInfo');
+		const myModal = document.querySelector('#myModal');
+
 		while (contactInfo.firstChild) {
 			contactInfo.removeChild(contactInfo.firstChild);
+			myModal.removeChild(myModal.firstChild);
+
 		}
 
 	}
@@ -210,12 +214,15 @@ function searchContacts() {
 					var jsonObject = JSON.parse(xhr.responseText);
 
 					const contactInfo = document.querySelector('#contactInfo');
+					const myModal = document.querySelector('#myModal');
+
 
 
 
 
 					while (contactInfo.firstChild) {
 						contactInfo.removeChild(contactInfo.firstChild);
+						myModal.removeChild(myModal.firstChild);
 					}
 
 
@@ -236,8 +243,8 @@ function searchContacts() {
 
 						const elem = document.createElement('div');
 						elem.className = "contactsBox";
-						elem.id = res[4];
-						//elem.onclick = popUp(res[4]);
+						elem.id = res[4] + "-"+ fname;
+						elem.onclick = showPopUp(res[4]);
 						const elemTextBoxName = document.createElement('div');
 						elemTextBoxName.className = "cBox";
 						const elemTextBoxNum = document.createElement('div');
@@ -253,7 +260,16 @@ function searchContacts() {
 						elem.appendChild(elemTextBoxName);
 						elem.appendChild(elemTextBoxNum);
 
+						const popUpBox = document.createElement('div');
+						popUpBox.className = "modal-content";
+						popUpBox.id = res[4];
+						popUpBox.appendChild(document.createTextNode(jsonObject.results[i]));
+
+
+
 						document.getElementById("contactInfo").appendChild(elem);
+						document.getElementById("myModal").appendChild(popUpBox);
+
 
 						//	if (i < jsonObject.results.length - 1) {
 						//	contactList += "<br />\r\n";
@@ -288,7 +304,14 @@ function fillSearchBar() {
 	searchContacts();
 }
 
-function popUp(ID) {
+function showPopUp(ID) {
 
+	var modal = document.getElementById("myModal");
+	var modalInfo = document.getElementsById(ID);
+
+	modal.style.display = "block";
+	modalInfo.style.display = "block";
 
 }
+
+
