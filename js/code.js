@@ -346,7 +346,7 @@ function initialSearch() {
 
 	var srch = document.getElementById("searchText").value;
 
-	window.location.href("http://www.keepcont4ct.tech/search2.html?" + srch);
+	window.location.href = "http://www.keepcont4ct.tech/search2.html?" + srch;
 
 }
 
