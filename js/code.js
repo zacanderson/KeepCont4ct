@@ -41,7 +41,7 @@ function doLogin() {
 		saveCookie();
 		// change redirect to landing page (still needs to be created)
 
-		window.location.replace("http://www.keepcont4ct.tech/dashboard.html");
+		window.location.href("http://www.keepcont4ct.tech/dashboard.html");
 
 	}
 	catch (err) {
@@ -83,7 +83,7 @@ function register() {
 			userId = jsonObject.id;
 			saveCookie();
 
-			window.location.replace("http://www.keepcont4ct.tech/dashboard.html");
+			window.location.href("http://www.keepcont4ct.tech/dashboard.html");
 
 		}
 
@@ -329,7 +329,7 @@ function initialSearch() {
 
 	var srch = document.getElementById("searchText").value;
 
-	window.location.replace("http://www.keepcont4ct.tech/search2.html?" + srch);
+	window.location.href("http://www.keepcont4ct.tech/search2.html?" + srch);
 
 }
 
