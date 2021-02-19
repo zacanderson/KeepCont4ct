@@ -226,7 +226,7 @@ function searchContacts() {
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
 	if (srch === "") {
-		const contactInfo = document.getElementById('#searchTable');
+		const contactInfo = document.getElementsByTagName('table');
 		const myModal = document.querySelector('#myModal');
 
 		while (contactInfo.firstChild) {
@@ -248,7 +248,7 @@ function searchContacts() {
 					//document.getElementById("contactSearchResult").innerHTML = "Contact(s) retrieved";
 					var jsonObject = JSON.parse(xhr.responseText);
 
-					const contactInfo = document.getElementById('#searchTable');
+					const contactInfo = etElementsByTagName('table');
 					const myModal = document.querySelector('#myModal');
 
 
