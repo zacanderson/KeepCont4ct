@@ -229,11 +229,8 @@ function searchContacts() {
 		const contactInfo = document.getElementsByClassName('table-wrap');
 		const myModal = document.querySelector('#myModal');
 
-		while (contactInfo.firstChild) {
-			contactInfo.removeChild(contactInfo.firstChild);
+		contactInfo.removeChild(contactInfo.firstChild);
 		
-
-		}
 
 		while (myModal.firstChild) {	
 			myModal.removeChild(myModal.firstChild);
@@ -250,20 +247,21 @@ function searchContacts() {
 
 					const contactInfo = document.getElementsByClassName("table-wrap");
 					const myModal = document.querySelector('#myModal');
+					contactInfo.removeChild(contactInfo.firstChild);
 
 
 
 
 
-					while (contactInfo.firstChild) {
-						contactInfo.removeChild(contactInfo.firstChild);
+					while (myModal.firstChild) {
+						
 						myModal.removeChild(myModal.firstChild);
 					}
 
 
 
 
-					var cB = "<table class=\"table table-bordered table-dark table-hover\"><thead><tr><th></th><th>First Name</th><th>Last Name</th><th>Email</th></tr></thead><tbody>";
+					var cB = "<table class=\"table table-bordered table-dark table-hover\"><thead><tr><th></th><th>First Name</th><th>Last Name</th><th>Number</th></tr></thead><tbody>";
 
 
 					for (var i = 0; i < jsonObject.results.length; i++) {
