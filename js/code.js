@@ -229,8 +229,9 @@ function searchContacts() {
 		const contactInfo = document.getElementsByClassName('table-wrap');
 		const myModal = document.querySelector('#myModal');
 
-		contactInfo.removeChild(contactInfo.firstChild);
-		
+		if(contactInfo.firstChild) {
+			contactInfo.removeChild(contactInfo.firstChild);
+		}		
 
 		while (myModal.firstChild) {	
 			myModal.removeChild(myModal.firstChild);
@@ -247,7 +248,10 @@ function searchContacts() {
 
 					const contactInfo = document.getElementsByClassName("table-wrap");
 					const myModal = document.querySelector('#myModal');
-					contactInfo.removeChild(contactInfo.firstChild);
+
+					if(contactInfo.firstChild) {
+						contactInfo.removeChild(contactInfo.firstChild);
+					}
 
 
 
