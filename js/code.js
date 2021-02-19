@@ -83,7 +83,7 @@ function register() {
 			userId = jsonObject.id;
 			saveCookie();
 
-			window.location.href("http://www.keepcont4ct.tech/dashboard.html");
+			window.location.href = "http://www.keepcont4ct.tech/dashboard.html";
 
 		}
 
@@ -248,7 +248,7 @@ function searchContacts() {
 					//document.getElementById("contactSearchResult").innerHTML = "Contact(s) retrieved";
 					var jsonObject = JSON.parse(xhr.responseText);
 
-					const contactInfo = document.querySelector('#csearchR');
+					const contactInfo = document.querySelector('#searchR');
 					const myModal = document.querySelector('#myModal');
 
 
