@@ -226,7 +226,7 @@ function searchContacts() {
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
 	if (srch === "") {
-		const contactInfo = document.getElementsByTagName('table')[0];
+		const contactInfo = document.getElementsByClassName('table-wrap');
 		const myModal = document.querySelector('#myModal');
 
 		while (contactInfo.firstChild) {
@@ -248,7 +248,7 @@ function searchContacts() {
 					//document.getElementById("contactSearchResult").innerHTML = "Contact(s) retrieved";
 					var jsonObject = JSON.parse(xhr.responseText);
 
-					const contactInfo = getElementsByTagName("table")[0];
+					const contactInfo = getElementsByClassName("table-wrap");
 					const myModal = document.querySelector('#myModal');
 
 
@@ -263,7 +263,8 @@ function searchContacts() {
 
 
 
-					var cB = "<thead><tr><th></th><th>First Name</th><th>Last Name</th><th>Email</th></tr></thead><tbody>";
+					var cB = "<table class=\"table table-bordered table-dark table-hover\"></table>" +
+					"<thead><tr><th></th><th>First Name</th><th>Last Name</th><th>Email</th></tr></thead><tbody>";
 
 
 					for (var i = 0; i < jsonObject.results.length; i++) {
@@ -329,7 +330,7 @@ function searchContacts() {
 
 					}
 
-					document.getElementById("contactInfo").innerHTML = cB + "</tbody>";
+					document.getElementById("contactInfo").innerHTML = cB + "</tbody></table>";
 				}
 			};
 
