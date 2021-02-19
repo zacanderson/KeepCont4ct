@@ -226,11 +226,16 @@ function searchContacts() {
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
 	if (srch === "") {
-		const contactInfo = document.querySelector('#contactInfo');
+		const contactInfo = document.querySelector('#searchR');
 		const myModal = document.querySelector('#myModal');
 
 		while (contactInfo.firstChild) {
 			contactInfo.removeChild(contactInfo.firstChild);
+		
+
+		}
+
+		while (myModal.firstChild) {	
 			myModal.removeChild(myModal.firstChild);
 
 		}
@@ -243,7 +248,7 @@ function searchContacts() {
 					//document.getElementById("contactSearchResult").innerHTML = "Contact(s) retrieved";
 					var jsonObject = JSON.parse(xhr.responseText);
 
-					const contactInfo = document.querySelector('#contactInfo');
+					const contactInfo = document.querySelector('#csearchR');
 					const myModal = document.querySelector('#myModal');
 
 
@@ -275,9 +280,15 @@ function searchContacts() {
 
 						document.getElementById("contactInfo").innerHTML = cB;
 
-						cB = cB + "<div class=\"contactsBox\" id=\""
-						+res[4] + "-"+ fName+"\" onclick=\"showPopUp("+res[4]+")\">"+
-						"<div class=\"cBox\">"+ res[0]+" "+res[1]+"</div><div class=\"cBox\" >"+res[2]+"</div>"+"</div>"
+						//cB = cB + "<div class=\"contactsBox\" id=\""
+						//+res[4] + "-"+ fName+"\" onclick=\"showPopUp("+res[4]+")\">"+
+						//"<div class=\"cBox\">"+ res[0]+" "+res[1]+"</div><div class=\"cBox\" >"+res[2]+"</div>"+"</div>";
+
+
+
+
+						cB = cB + "<tr id=\""+res[4] + "-"+ fName+"\" onclick=\"showPopUp("+res[4]+")\"><th scope=\"row\"></th><td>"
+						+fName+"</td><td>"+lName+"</td><td>"+pNum+"</td></tr>";
 
 						//elem.className = "contactsBox";
 						//elem.id = res[4] + "-"+ fName;
@@ -305,7 +316,6 @@ function searchContacts() {
 
 
 
-						document.getElementById("contactInfo").appendChild(elem);
 						document.getElementById("myModal").appendChild(popUpBox);
 
 
@@ -313,7 +323,9 @@ function searchContacts() {
 						//	contactList += "<br />\r\n";
 						//}
 
-						document.getElementById(""+res[4]).innerHTML = "<span class=\"close\" onclick=\"closePopUp("+res[4]+")\">&times;</span><h1>"+fName+" "+lName+"</h1><br><h2>number: "+pNum+"</h2><h2>email: "+email+"</h2><h3>note: </h3>"
+						document.getElementById(""+res[4]).innerHTML = "<span class=\"close\" onclick=\"closePopUp("+res[4]
+						+")\">&times;</span><h1>"+fName+" "+lName+"</h1><br><h2>number: "+pNum+"</h2><h2>email: "
+						+email+"</h2><h3>note: </h3>"
 
 					}
 
@@ -374,13 +386,14 @@ function closePopUp(idNum) {
 
 function test() {
 	var cB = "";
-	for (var i =0; i < 5; i++)
+	for (var i =0; i < 2; i++)
 {
-	cB = cB + "<div class=\"contactsBox\" id=\""+"105" + "-"+ "fName"+"\" onclick=\"showPopUp("+")\"></div>";
+	cB = cB + "<tr id=\""+"res[4]" + "-"+ "fName"+"\" onclick=\"showPopUp("+"res[4]"+")\"><th scope=\"row\"></th><td>"
+	+"fName"+"</td><td>"+"lName"+"</td><td>"+"pNum"+"</td></tr>";
 
 }
 
-	document.getElementById("contactInfo").innerHTML = cB;
+	document.getElementById("searchR").innerHTML = cB;
 
 	mInfo = "<span class=\"close\" onclick=\"closePopUp()\">&times;</span><h1>"+fName+" "+lName+"</h1><br><h2>number: "+pNum+"</h2><h2>email: "+email+"</h2><h3>note: </h3>"
 }

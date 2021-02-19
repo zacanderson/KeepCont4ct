@@ -29,7 +29,7 @@ label
     border-radius: 0px;
 }
 
-header
+#header
 {
     position: fixed;
     top: -10;
@@ -45,7 +45,7 @@ header
     /*border-radius: 60px;*/
 }
 
-.HeaderLogo {
+#HeaderLogo {
     text-align: center;
     margin: 0 auto;
     width:10%;
@@ -102,9 +102,9 @@ header
 
 #sDiv
 {
-    width: 50%;
+    width: 70%;
     height: 80%;
-    background-color: rgb(255, 255, 255);
+    background-color: #454d55;
     position:fixed;
    
    border-width: 3px;
@@ -128,12 +128,14 @@ header
 
 #sContent
 {
-  height: 85%;
+  height: 82%;
   margin-top: 0;
   width: 100%;
    overflow:auto;
+   border-radius: 25px;
+
    
-   background-color: rgb(255, 255, 255);
+   background-color: #454d55;
    
 }
 
@@ -154,7 +156,7 @@ header
 
 
 .search {
-  background-color: rgb(255, 255, 255);
+  background-color: #454d55;
   width: 80%;
   border-radius: 25px;
   margin-top: 1%;
@@ -174,6 +176,7 @@ header
     font-size: 21;
     background: transparent;
     border-bottom: 1px solid black;
+    color: white;
     
 
 
@@ -349,6 +352,13 @@ select{
     margin: auto;
     overflow: hidden;
   }
+  .container2{
+    width: 95%;
+    /*this might be what's doing the wierd margin thing since container wraps everything*/
+    margin: auto;
+    overflow: hidden;
+    height: 78%;
+  }
   
   a:link, a:visited{
     color:black;
@@ -359,29 +369,46 @@ select{
     color: #AAF4CC;
   }
   
-  #userName{
+  #userName2{
     background: #E7DDD3;
     border-radius: 30px;
     /*
     border:10px solid black;
     */
     /*display: inline-block;---crops width to content---*/
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 10px;
   }
   
   .row {
     display: flex;
+    height: 100%;
   }
   
   .column {
     
     flex: 50%;
+    
     padding: 0% 5% 5% 5%;
-    margin: 1%;
+    margin: 3%;
     background: #AAF4CC;
-    border-radius: 25px;
+    border-radius: 10px;
     text-align: center;
+    
+    
+  }
+
+  .column2 {
+    
+    flex: 50%;
+    
+    padding: 0% 5% 5% 5%;
+    margin: 3%;
+    
+    background: #AAF4CC;
+    border-radius: 10px;
+    text-align: center;
+    
     
   }
   
