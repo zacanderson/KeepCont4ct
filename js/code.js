@@ -263,7 +263,7 @@ function searchContacts() {
 
 
 
-					var cB = "";
+					var cB = "<thead><tr><th></th><th>First Name</th><th>Last Name</th><th>Email</th></tr></thead><tbody>";
 
 
 					for (var i = 0; i < jsonObject.results.length; i++) {
@@ -329,7 +329,7 @@ function searchContacts() {
 
 					}
 
-					document.getElementById("contactInfo").innerHTML = cB;
+					document.getElementById("contactInfo").innerHTML = cB + "</tbody>";
 				}
 			};
 
