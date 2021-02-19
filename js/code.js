@@ -248,7 +248,7 @@ function searchContacts() {
 					//document.getElementById("contactSearchResult").innerHTML = "Contact(s) retrieved";
 					var jsonObject = JSON.parse(xhr.responseText);
 
-					const contactInfo = etElementsByTagName('table');
+					const contactInfo = getElementsByTagName('table');
 					const myModal = document.querySelector('#myModal');
 
 
