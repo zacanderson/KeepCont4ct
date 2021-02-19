@@ -263,8 +263,7 @@ function searchContacts() {
 
 
 
-					var cB = "<table class=\"table table-bordered table-dark table-hover\"></table>" +
-					"<thead><tr><th></th><th>First Name</th><th>Last Name</th><th>Email</th></tr></thead><tbody>";
+					var cB = "<table class=\"table table-bordered table-dark table-hover\"><thead><tr><th></th><th>First Name</th><th>Last Name</th><th>Email</th></tr></thead><tbody>";
 
 
 					for (var i = 0; i < jsonObject.results.length; i++) {
