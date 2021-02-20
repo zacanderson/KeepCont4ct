@@ -415,7 +415,15 @@ function closePopUp(idNum) {
 	var modal = document.getElementById("myModal");
 	var modal2 = document.getElementById(""+idNum);
 
-	//var modalInfo = document.getElementById("modal-content");
+	document.getElementById(ID+"name").contentEditable = "false";
+	document.getElementById(ID+"number").contentEditable = "false";
+	document.getElementById(ID+"email").contentEditable = "false";
+
+	document.getElementById("saveButton").style.display = "none";
+	document.getElementById("exitButton").style.display = "none";
+
+	document.getElementById("modifyButton").style.display = "inline-block";
+	document.getElementById("deleteButton").style.display = "inline-block";
 
 	modal2.style.display = "none";
 

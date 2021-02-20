@@ -1,0 +1,285 @@
+@charset "UTF-8";
+body {
+  --h: 19em;
+  -ms-grid-columns: (var(--w, 13em))[var];
+      grid-template-columns: repeat(var(--n, 7), var(--w, 13em));
+  grid-gap: 1em;
+  margin: 0;
+}
+
+@media (max-width: 99em) {
+  body {
+    --n: 6;
+  }
+}
+
+@media (max-width: 85em) {
+  body {
+    --n: 5;
+  }
+}
+
+@media (max-width: 71em) {
+  body {
+    --n: 4;
+  }
+}
+
+@media (max-width: 57em) {
+  body {
+    --n: 3;
+  }
+}
+
+@media (max-width: 43em) {
+  body {
+    --n: 2;
+  }
+}
+
+@media (max-width: 29em) {
+  body {
+    --n: 1;
+  }
+}
+
+@media (max-width: 15em) {
+  body {
+    --w: 100%;
+    --h: 146.15385vw;
+  }
+}
+
+.card {
+  -webkit-box-flex: 50%;
+      -ms-flex: 50%;
+          flex: 50%;
+  padding: 0% 5% 5% 5%;
+  margin: 3%;
+  text-align: center;
+  font-family: 'Share Tech Mono', monospace;
+  overflow: hidden;
+  position: relative;
+  border-radius: 7px;
+  -webkit-box-shadow: 2px 2px 17px aquamarine;
+          box-shadow: 2px 2px 17px aquamarine;
+  background: black;
+  color: #FFF;
+  background: -webkit-gradient(linear, left top, right top, from(black), to(#333333));
+  background: linear-gradient(to right, black, #333333);
+  background-clip: padding-box;
+  /* !importanté */
+  border: solid 5px aquamarine;
+  /* !importanté */
+  border-radius: 1em;
+  z-index: 0;
+}
+
+.card:before, .card:after {
+  --p: 0;
+  --s: calc(1 - 2*var(--p));
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-mask: var(--m);
+  mask: var(--m);
+  content: '';
+}
+
+.card:after {
+  --p: 1 ;
+}
+
+.card:nth-child(2):before, .card:nth-child(2):after, .card:nth-child(1):before, .card:nth-child(1):after {
+  --c0: hsla(0, 0%, 0%, var(--p));
+  --c1: hsla(0, 0%, 0%, calc(1 - var(--p)));
+  background: repeating-linear-gradient(calc(var(--s)*45deg), #000000 0, #000000 3px, transparent 0, transparent 13px);
+  --m: repeating-radial-gradient(circle, 
+							var(--c0) 0, var(--c0) 2em, 
+							var(--c1) 0, var(--c1) 4em);
+}
+
+.card > *, .modal-content2 > * {
+  z-index: 10;
+  position: relative;
+}
+
+.modal-content2 {
+  -webkit-box-flex: 50%;
+      -ms-flex: 50%;
+          flex: 50%;
+  text-align: left;
+  font-family: 'Share Tech Mono', monospace;
+  display: none;
+  color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  width: 32%;
+  height: 57%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  -webkit-box-shadow: 2px 2px 17px aquamarine;
+          box-shadow: 2px 2px 17px aquamarine;
+  color: #FFF;
+  background: -webkit-gradient(linear, left top, right top, from(black), to(#333333));
+  background: linear-gradient(to right, black, #333333);
+  background-clip: padding-box;
+  /* !importanté */
+  border: solid 5px aquamarine;
+  /* !importanté */
+  z-index: 0;
+}
+
+.modal-content2:before, .modal-content2:after {
+  --p: 0;
+  --s: calc(1 - 2*var(--p));
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-mask: var(--m);
+  mask: var(--m);
+  content: '';
+}
+
+.modal-content2:after {
+  --p: 1 ;
+}
+
+.modal-content2:nth-child(2):before, .modal-content2:nth-child(2):after, .modal-content2:nth-child(1):before, .modal-content2:nth-child(1):after {
+  --c0: hsla(0, 0%, 0%, var(--p));
+  --c1: hsla(0, 0%, 0%, calc(1 - var(--p)));
+  background: repeating-linear-gradient(calc(var(--s)*45deg), #000000 0, #000000 3px, transparent 0, transparent 13px);
+  --m: repeating-radial-gradient(circle, 
+							var(--c0) 0, var(--c0) 2em, 
+							var(--c1) 0, var(--c1) 4em);
+}
+
+.frontDiv {
+  width: 80%;
+  height: 80%;
+  background-color: #f1ece7;
+  border-width: 3px;
+  border-style: solid;
+  border-color: aquamarine;
+  border-radius: 25px;
+  text-align: center;
+  position: fixed;
+  margin: auto;
+  margin-top: 10%;
+  margin-bottom: 20%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -70%);
+          transform: translate(-50%, -70%);
+  font-family: 'Share Tech Mono', monospace;
+  overflow: hidden;
+  -webkit-box-shadow: 2px 2px 17px aquamarine;
+          box-shadow: 2px 2px 17px aquamarine;
+  color: black;
+  background: -webkit-gradient(linear, left top, right top, from(black), to(#333333));
+  background: linear-gradient(to right, black, #333333);
+  background-clip: padding-box;
+  /* !importanté */
+  border: solid 5px aquamarine;
+  /* !importanté */
+  z-index: 0;
+}
+
+.frontDiv:before, .frontDiv:after {
+  --p: 0;
+  --s: calc(1 - 2*var(--p));
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-mask: var(--m);
+  mask: var(--m);
+  content: '';
+}
+
+.frontDiv:after {
+  --p: 1 ;
+}
+
+.frontDiv:nth-child(2):before, .frontDiv:nth-child(2):after, .frontDiv:nth-child(1):before, .frontDiv:nth-child(1):after {
+  --c0: hsla(0, 0%, 0%, var(--p));
+  --c1: hsla(0, 0%, 0%, calc(1 - var(--p)));
+  background: linear-gradient(calc(var(--s)*45deg), transparent calc(50% - 1px), black 0, black calc(50% + 1px), transparent 0) 50%/ 1em 1em;
+  --m: repeating-conic-gradient(var(--c0) 0%, var(--c0) 22.5deg, var(--c1) 0%, var(--c1) 45deg)
+		;
+}
+
+.frontDiv > *, .modal-content2 > * {
+  z-index: 10;
+  position: relative;
+}
+
+#loginDiv, #sDiv {
+  font-size: 30px;
+  width: 30%;
+  padding: 10px;
+  background: -webkit-gradient(linear, left top, right top, from(#919191), to(#c5c5c5));
+  background: linear-gradient(to right, #919191, #c5c5c5);
+  display: inline-block;
+  height: 75%;
+  margin: auto;
+  margin-left: 10%;
+  vertical-align: top;
+  margin-top: 5%;
+  border-width: 3px;
+  border-style: solid;
+  border-color: aquamarine;
+}
+
+#addDiv {
+  font-size: 30px;
+  width: 30%;
+  padding: 10px;
+  background: -webkit-gradient(linear, left top, right top, from(#919191), to(#c5c5c5));
+  background: linear-gradient(to right, #919191, #c5c5c5);
+  display: inline-block;
+  margin-right: 100px;
+  height: 75%;
+  margin: auto;
+  margin-top: 0%;
+  vertical-align: top;
+  margin-top: 5%;
+  border-width: 3px;
+  border-style: solid;
+  border-color: aquamarine;
+}
+
+#sDiv {
+  width: 70%;
+  height: 80%;
+  background: -webkit-gradient(linear, left top, right top, from(black), to(#333333));
+  background: linear-gradient(to right, black, #333333);
+  position: fixed;
+  border-width: 3px;
+  border-style: solid;
+  border-color: aquamarine;
+  border-radius: 25px;
+  text-align: center;
+  margin: auto;
+  margin-top: 10%;
+  float: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -70%);
+          transform: translate(-50%, -70%);
+  border-radius: 25px;
+  opacity: 1;
+  z-index: 0;
+  overflow: hidden;
+  font-family: 'Share Tech Mono', monospace;
+  -webkit-box-shadow: 2px 2px 17px aquamarine;
+          box-shadow: 2px 2px 17px aquamarine;
+}
+/*# sourceMappingURL=style3.css.map */

@@ -1,4 +1,4 @@
-body 
+body, #bd 
 {
     text-align:center;
     margin: 0;
@@ -42,6 +42,10 @@ label
     background-color: black;
     padding: 1%;
     z-index:1000;
+    box-shadow: 0 0 10px aquamarine;
+    border-color: aquamarine;
+    border-width: 5px;
+
     /*border-radius: 60px;*/
 }
 
@@ -49,6 +53,9 @@ label
     text-align: center;
     margin: 0 auto;
     width:10%;
+
+    
+ 
 }
 
 
@@ -63,10 +70,15 @@ label
    border-color: aquamarine;
     border-radius: 25px;
     text-align:center;
-    position: relative;
+    position: fixed;
     margin: auto;
     margin-top: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 20%;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
 }
 
 .cBox
@@ -104,7 +116,7 @@ label
 {
     width: 70%;
     height: 80%;
-    background-color: #454d55;
+    background-color: #000000;
     position:fixed;
    
    border-width: 3px;
@@ -135,7 +147,7 @@ label
    border-radius: 25px;
 
    
-   background-color: #454d55;
+   
    
 }
 
@@ -156,7 +168,6 @@ label
 
 
 .search {
-  background-color: #454d55;
   width: 80%;
   border-radius: 25px;
   margin-top: 1%;
@@ -175,7 +186,7 @@ label
     
     font-size: 21;
     background: transparent;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(255, 255, 255);
     color: white;
     
 
@@ -207,7 +218,7 @@ label
 .vl 
 {
   height: 75%;
-  border: 1px solid rgb(85, 85, 85);
+  border: 1px solid aquamarine;
     display: inline-block;
     text-align: center;
     margin: auto;
@@ -224,6 +235,8 @@ label
     background-color: #b2b2b2;
 }
 
+
+
 #registerButton, #loginButton, #addButton, #searchButton, #modifyButton
 {
     /*
@@ -238,6 +251,10 @@ label
     color: black;
     width: 80%;
     height: 9%;
+}
+
+#modifyButton {
+  width: 100%;
 }
 
 
@@ -258,10 +275,11 @@ label
   
     background-color: red;
     color: white;
-    width: 80%;
+    width: 100%;
     height: 9%;
     margin-bottom: 15px;
     margin-top: 15px
+
 }
 
 #exitButton {
@@ -351,8 +369,35 @@ input[type="submit"]:hover {
 }
 
 #logoutButton{
-    width: 20%;
-    margin-left: 40%;
+    width: 3%;
+    margin-left: 35%;
+    margin-top: 10px;
+  position:fixed;
+    text-align: center;
+      color: white;
+      transform: translateX(2000%); 
+      font-family: 'Share Tech Mono', monospace;
+}
+
+#logoutButton:hover{
+    color: aquamarine; 
+    border-bottom: 2px solid aquamarine;
+}
+
+#dashButton{
+  width: 3%;
+  margin-left: 35%;
+  margin-top: 10px;
+position:fixed;
+  text-align: center;
+    color: white;
+     
+    font-family: 'Share Tech Mono', monospace;
+}
+
+#dashButton:hover{
+  color: aquamarine; 
+  border-bottom: 2px solid aquamarine;
 }
 
 select{
@@ -393,11 +438,11 @@ select{
     overflow: hidden;
   }
   .container2{
-    width: 95%;
+    width: 85%;
     /*this might be what's doing the wierd margin thing since container wraps everything*/
     margin: auto;
     overflow: hidden;
-    height: 78%;
+    height: 85%;
   }
   
   a:link, a:visited{
@@ -410,8 +455,8 @@ select{
   }
   
   #userName2{
-    background: #E7DDD3;
-    border-radius: 30px;
+    
+    
     /*
     border:10px solid black;
     */
@@ -501,7 +546,7 @@ select{
   border: 1px solid #888;
   width: 45%;
   height: 60%;
-  border-radius: 19px;
+  border-radius: 10px;
   box-shadow: 0 0 10px aquamarine;
 }
 
@@ -518,4 +563,35 @@ select{
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.line-1{
+  position: relative;
+  top: 50%;  
+  width: 24em;
+  margin: 0 auto;
+  
+  font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%); 
+  font-family: 'Share Tech Mono', monospace;
+   
+}
+
+/* Animation */
+.anim-typewriter{
+animation: typewriter 4s steps(44) 1s 1 normal both,
+           blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+from{width: 0;}
+to{width: 24em;}
+}
+
+.pInfo {
+  color: white;
+  font-family: 'Share Tech Mono', monospace;
+
 }
