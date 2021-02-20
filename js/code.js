@@ -190,12 +190,13 @@ function modifyContact(ID) {
 	var url = urlBase + '/EditContact.' + extension;
 
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
+	xhr.open("POST", url, false);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	try {
 		xhr.onreadystatechange = function () {
 			if (this.readyState == 4 && this.status == 200) {
-				window.location.replace("http://www.keepcont4ct.tech/search2.html");
+				console.log(JSON.parse(xhr.responseText))
+				//window.location.replace("http://www.keepcont4ct.tech/search2.html");
 			}
 		};
 
