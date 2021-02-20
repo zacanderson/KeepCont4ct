@@ -324,12 +324,12 @@ function initialSearch() {
 
 function initialModify(ID) {
 
-	var name = document.getElementById(ID+"name");
-	var num = document.getElementById(ID+"number");
-	var email = document.getElementById(ID+"email");
-	name.style.contentEditable = "true";
-	num.style.contentEditable = "true";
-	email.style.contentEditable = "true";
+	document.getElementById(ID+"name").contentEditable = "true";
+	document.getElementById(ID+"number").contentEditable = "true";
+	document.getElementById(ID+"email").contentEditable = "true";
+	//name.style.contentEditable = "true";
+	///num.style.contentEditable = "true";
+	//email.style.contentEditable = "true";
 
 
 
