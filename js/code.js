@@ -172,9 +172,7 @@ function addContact() {
 
 function deleteContact(contactId) {
 
-	document.getElementById("contactDeleteResult").innerHTML = "";
-	firstName = document.getElementById("fname").value;
-	lastName = document.getElementById("lname").value;
+	
 
 	var jsonPayload = '{"ID" : "' + contactId + '","UserID" : ' + userId + '}';
 
