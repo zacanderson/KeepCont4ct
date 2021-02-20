@@ -282,52 +282,21 @@ function searchContacts() {
 
 						document.getElementById("contactInfo").innerHTML = cB;
 
-						//cB = cB + "<div class=\"contactsBox\" id=\""
-						//+res[4] + "-"+ fName+"\" onclick=\"showPopUp("+res[4]+")\">"+
-						//"<div class=\"cBox\">"+ res[0]+" "+res[1]+"</div><div class=\"cBox\" >"+res[2]+"</div>"+"</div>";
-
-
-
-
 						cB = cB + "<tr id=\""+res[4] + "-"+ fName+"\" onclick=\"showPopUp("+res[4]+")\"><th scope=\"row\"></th><td>"
 						+fName+"</td><td>"+lName+"</td><td>"+pNum+"</td></tr>";
 
-						//elem.className = "contactsBox";
-						//elem.id = res[4] + "-"+ fName;
-						//elem.onclick = "showPopUp(105)";
-						//elem.addEventListener("click",showPopUp(res[4], false) );
-						//const elemTextBoxName = document.createElement('div');
-						//elemTextBoxName.className = "cBox";
-						//const elemTextBoxNum = document.createElement('div');
-						//elemTextBoxNum.className = "cBox"; 
-
-
-						//const elemTextName = document.createTextNode(res[0] + " " + res[1]);
-						//const elemTextNum = document.createTextNode(res[2]);
-
-						//elemTextBoxName.appendChild(elemTextName);
-						//elemTextBoxNum.appendChild(elemTextNum);
-
-						//elem.appendChild(elemTextBoxName);
-						//elem.appendChild(elemTextBoxNum);
 
 						const popUpBox = document.createElement('div');
 						popUpBox.className = "modal-content";
 						popUpBox.id = res[4];
-						//popUpBox.appendChild(document.createTextNode(jsonObject.results[i]));
-
-
 
 						document.getElementById("myModal").appendChild(popUpBox);
 
-
-						//	if (i < jsonObject.results.length - 1) {
-						//	contactList += "<br />\r\n";
-						//}
-
 						document.getElementById(""+res[4]).innerHTML = "<span class=\"close\" onclick=\"closePopUp("+res[4]
-						+")\">&times;</span><h1>"+fName+" "+lName+"</h1><br><h2>number: "+pNum+"</h2><h2>email: "
-						+email+"</h2><h3>note: </h3><button type=\"button\" value=\"Delete\" id=\"loginButton\" onclick=\"deleteContact("+ID+");\">Delete</button>"
+						+")\">&times;</span><h1 contenteditable=\"true\">"+fName+" "+lName+"</h1><br><h2>number: </h2><h2 contenteditable=\"true\">"
+						+pNum+"</h2><h2>email: </h2><h2contenteditable=\"true\">"+email+"</h2><h3>note: </h3><button type=\"button\" value=\"Delete\" id=\"loginButton\""+
+						" onclick=\"deleteContact("+ID+");\">Delete</button><button type=\"button\" value=\"Delete\" id=\"loginButton\""+
+						">Modify</button>"
 
 					}
 
