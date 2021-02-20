@@ -176,9 +176,9 @@ function modifyContact(ID) {
 
 
 
-	var name = document.getElementById(ID+"name").value;
-	var phoneNumber = document.getElementById(ID+"number").value;
-	var email = document.getElementById(ID+"email").value;
+	var name = document.getElementById(ID+"name").innerText;
+	var phoneNumber = document.getElementById(ID+"number").innerText;
+	var email = document.getElementById(ID+"email").innerText;
 
 	var fullName = name.split(" ");
 	var firstName = fullName[0];
