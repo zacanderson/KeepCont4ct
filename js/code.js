@@ -265,6 +265,7 @@ function searchContacts() {
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
+	/*
 	if (srch === "") {
 		const contactInfo = document.querySelector('#contactInfo');
 		const myModal = document.querySelector('#myModal');
@@ -279,7 +280,9 @@ function searchContacts() {
 		}
 
 	}
-	else {
+	*/
+
+	//else {
 		try {
 			xhr.onreadystatechange = function () {
 				if (this.readyState == 4 && this.status == 200) {
@@ -351,7 +354,7 @@ function searchContacts() {
 		catch (err) {
 			document.getElementById("contactSearchResult").innerHTML = err.message;
 		}
-	}
+	//}
 }
 
 function initialSearch() {
@@ -391,8 +394,9 @@ function initialModify(ID) {
 
 function fillSearchBar() {
 	const queryString = location.search.substring(1);
-	const qString = document.createTextNode(queryString);
-	document.getElementById("inpt_search").value = "" + queryString;
+	var qS = queryString.split("%20");
+	//const qString = document.createTextNode(qS[0] + " " + qS[1]);
+	document.getElementById("inpt_search").value = "" + qS[0] + " " + qS[1];
 	searchContacts();
 }
 
