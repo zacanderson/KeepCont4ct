@@ -393,9 +393,15 @@ function initialModify(ID) {
 }
 
 function fillSearchBar() {
+
+
 	const queryString = location.search.substring(1);
+
+	if(queryString == "undefined")
+	{
+		queryString = "";
+	}
 	var qS = queryString.split("%20");
-	//const qString = document.createTextNode(qS[0] + " " + qS[1]);
 	document.getElementById("inpt_search").value = "" + qS[0] + " " + qS[1];
 	searchContacts();
 }
