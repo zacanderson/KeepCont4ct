@@ -145,7 +145,7 @@ body {
   --p: 1 ;
 }
 
-.modal-content2:nth-child(2):before, .modal-content2:nth-child(2):after, .modal-content2:nth-child(1):before, .modal-content2:nth-child(1):after {
+.modal-content2:before, .modal-content2:after {
   --c0: hsla(0, 0%, 0%, var(--p));
   --c1: hsla(0, 0%, 0%, calc(1 - var(--p)));
   background: repeating-linear-gradient(calc(var(--s)*45deg), #000000 0, #000000 3px, transparent 0, transparent 13px);
