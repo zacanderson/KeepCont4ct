@@ -410,10 +410,10 @@ function showPopUp(idNum) {
 
 }
 
-function closePopUp(idNum) {
+function closePopUp(ID) {
 
 	var modal = document.getElementById("myModal");
-	var modal2 = document.getElementById(""+idNum);
+	var modal2 = document.getElementById(""+ID);
 
 	document.getElementById(ID+"name").contentEditable = "false";
 	document.getElementById(ID+"number").contentEditable = "false";
