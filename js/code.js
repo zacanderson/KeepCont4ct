@@ -293,9 +293,9 @@ function searchContacts() {
 						document.getElementById("myModal").appendChild(popUpBox);
 
 						document.getElementById(""+res[4]).innerHTML = "<span class=\"close\" onclick=\"closePopUp("+res[4]
-						+")\">&times;</span><h1 contenteditable=\"true\">"+fName+" "+lName+"</h1><br><h2>number: </h2><h2 contenteditable=\"true\">"
-						+pNum+"</h2><h2>email: </h2><h2 contenteditable=\"true\">"+email+"</h2><h3>note: </h3><button type=\"button\" value=\"Delete\" id=\"loginButton\""+
-						" onclick=\"deleteContact("+ID+");\">Delete</button><br><button type=\"button\" value=\"Delete\" id=\"loginButton\""+
+						+")\">&times;</span><h1 contenteditable=\"false\" id=\""+ID+"name\">"+fName+" "+lName+"</h1><br><h2>number: </h2><h2 contenteditable=\"false\" id=\""+ID+"number\">"
+						+pNum+"</h2><h2>email: </h2><h2 contenteditable=\"false\" id=\""+ID+"email\">"+email+"</h2><h3>note: </h3><button type=\"button\" value=\"Delete\" id=\"loginButton\""+
+						" onclick=\"deleteContact("+ID+");\">Delete</button><br><button type=\"button\" value=\"Modify\" id=\"loginButton\" onclick=\"intialModify("+ID+");\""+
 						">Modify</button>"
 
 					}
@@ -318,6 +318,22 @@ function initialSearch() {
 	var srch = document.getElementById("searchText").value;
 
 	window.location.href = "http://www.keepcont4ct.tech/search2.html?" + srch;
+
+}
+
+
+function initialModify(ID) {
+
+	var name = document.getElementById(ID+"name");
+	var num = document.getElementById(ID+"name");
+	var email = document.getElementById(ID+"name");
+	name.style.contenteditable = "true";
+	num.style.contenteditable = "true";
+	email.style.contenteditable = "true";
+
+
+
+	//window.location.href = "http://www.keepcont4ct.tech/search2.html?" + srch;
 
 }
 
