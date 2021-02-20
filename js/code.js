@@ -293,8 +293,8 @@ function searchContacts() {
 						document.getElementById("myModal").appendChild(popUpBox);
 
 						document.getElementById(""+res[4]).innerHTML = "<span class=\"close\" onclick=\"closePopUp("+res[4]
-						+")\">&times;</span><h1 contenteditable=\"false\" id=\""+ID+"name\">"+fName+" "+lName+"</h1><br><h2>number: </h2><h2 contenteditable=\"false\" id=\""+ID+"number\">"
-						+pNum+"</h2><h2>email: </h2><h2 contenteditable=\"false\" id=\""+ID+"email\">"+email+"</h2><h3>note: </h3><button type=\"button\" value=\"Delete\" id=\"loginButton\""+
+						+")\">&times;</span><h1  id=\""+ID+"name\">"+fName+" "+lName+"</h1><br><h2>number: </h2><h2  id=\""+ID+"number\">"
+						+pNum+"</h2><h2>email: </h2><h2  id=\""+ID+"email\">"+email+"</h2><h3>note: </h3><button type=\"button\" value=\"Delete\" id=\"loginButton\""+
 						" onclick=\"deleteContact("+ID+");\">Delete</button><br><button type=\"button\" value=\"Modify\" id=\"loginButton\" onclick=\"initialModify("+ID+");\""+
 						">Modify</button>"
 
