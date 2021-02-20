@@ -16,7 +16,7 @@
         returnWithError($conn->connect_error);
 
     }else{
-        $sql = "UPDATE ContactInfo SET firstName = ?, lastName = ?, email= ?, phoneNumber= ? WHERE ID = ? AND UserID = ?";
+        $sql = "UPDATE ContactInfo SET firstName = ?, lastName = ?, email= ?, phoneNumber= ? WHERE id = ? AND userID = ?";
         $sql = $conn->prepare($sql);
         $sql->bind_param("ssssii", $firstName, $lastName, $email, $phoneNumber, $id, $userID);
         
