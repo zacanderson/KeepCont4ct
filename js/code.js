@@ -401,7 +401,14 @@ function fillSearchBar() {
 		queryString = "";
 	}
 	var qS = queryString.split("%20");
-	document.getElementById("inpt_search").value = "" + qS[0] + " " + qS[1];
+	
+
+	if(qS[1] === "undefined"){
+		document.getElementById("inpt_search").value = "" + qS[0] + " " + qS[1];
+	}
+
+	document.getElementById("inpt_search").value = "" + qS[0];
+
 	searchContacts();
 }
 
