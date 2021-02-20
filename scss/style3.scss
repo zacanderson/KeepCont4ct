@@ -88,11 +88,7 @@ body {
     
 }
 
-.card > *, .modal-content2 > * {
-    z-index: 10;
-    position: relative;
 
-}
 
 .modal-content2 {
 
@@ -155,6 +151,12 @@ body {
 							var(--c1) 0, var(--c1) #{$s});
 		}
 	}
+
+}
+
+.card > *, .modal-content2 > * {
+    z-index: 10;
+    position: relative;
 
 }
 	

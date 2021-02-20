@@ -551,10 +551,13 @@ select{
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
+  color: #ffffff;
   float: right;
   font-size: 28px;
   font-weight: bold;
+  position: relative;
+  z-index: 1000;
+  
 }
 
 .close:hover,

@@ -101,11 +101,6 @@ body {
 							var(--c1) 0, var(--c1) 4em);
 }
 
-.card > *, .modal-content2 > * {
-  z-index: 10;
-  position: relative;
-}
-
 .modal-content2 {
   -webkit-box-flex: 50%;
       -ms-flex: 50%;
@@ -157,6 +152,11 @@ body {
   --m: repeating-radial-gradient(circle, 
 							var(--c0) 0, var(--c0) 2em, 
 							var(--c1) 0, var(--c1) 4em);
+}
+
+.card > *, .modal-content2 > * {
+  z-index: 10;
+  position: relative;
 }
 
 .frontDiv {
