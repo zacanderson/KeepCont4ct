@@ -377,27 +377,26 @@ input[type="submit"]:hover {
       color: white;
       transform: translateX(2000%); 
       font-family: 'Share Tech Mono', monospace;
+
+     
+
+
 }
 
 #logoutButton:hover{
-    color: aquamarine; 
+ 
+
+ 
+    color: aquamarine;
+ 
+    
     border-bottom: 2px solid aquamarine;
-}
 
-#dashButton{
-  width: 3%;
-  margin-left: 35%;
-  margin-top: 10px;
-position:fixed;
-  text-align: center;
-    color: white;
-     
-    font-family: 'Share Tech Mono', monospace;
-}
 
-#dashButton:hover{
-  color: aquamarine; 
-  border-bottom: 2px solid aquamarine;
+
+   
+
+
 }
 
 select{

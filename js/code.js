@@ -124,7 +124,7 @@ function readCookie() {
 		window.location.href = "index.html";
 	}
 	else {
-		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
+		document.getElementById("userName2").innerHTML = "Logged in as " + firstName + " " + lastName;
 	}
 }
 
@@ -327,7 +327,7 @@ function searchContacts() {
 
 
 						const popUpBox = document.createElement('div');
-						popUpBox.className = "modal-content";
+						popUpBox.className = "modal-content2";
 						popUpBox.id = res[4];
 
 						document.getElementById("myModal").appendChild(popUpBox);
