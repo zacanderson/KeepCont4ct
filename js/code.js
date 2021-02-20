@@ -294,8 +294,8 @@ function searchContacts() {
 
 						document.getElementById(""+res[4]).innerHTML = "<span class=\"close\" onclick=\"closePopUp("+res[4]
 						+")\">&times;</span><h1 contenteditable=\"true\">"+fName+" "+lName+"</h1><br><h2>number: </h2><h2 contenteditable=\"true\">"
-						+pNum+"</h2><h2>email: </h2><h2contenteditable=\"true\">"+email+"</h2><h3>note: </h3><button type=\"button\" value=\"Delete\" id=\"loginButton\""+
-						" onclick=\"deleteContact("+ID+");\">Delete</button><button type=\"button\" value=\"Delete\" id=\"loginButton\""+
+						+pNum+"</h2><h2>email: </h2><h2 contenteditable=\"true\">"+email+"</h2><h3>note: </h3><button type=\"button\" value=\"Delete\" id=\"loginButton\""+
+						" onclick=\"deleteContact("+ID+");\">Delete</button><br><button type=\"button\" value=\"Delete\" id=\"loginButton\""+
 						">Modify</button>"
 
 					}
