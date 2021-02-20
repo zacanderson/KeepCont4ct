@@ -2,12 +2,12 @@
 
     $inData = getRequestInfo();
 
-    $id = $inData["id"];
-    $firstName = $inData["firstName"];
-    $lastName = $inData["lastName"];
-    $email = $inData["email"];
-    $phoneNumber = $inData["phoneNumber"];
-    $userID = $inData["userID"];
+    $id = $inData["ID"];
+    $firstName = $inData["FirstName"];
+    $lastName = $inData["LastName"];
+    $email = $inData["Email"];
+    $phoneNumber = $inData["PhoneNumber"];
+    $userID = $inData["UserID"];
 
     //connect to database
     $conn = new mysqli("localhost", "NotTheBeast", "WeAdoreCOP4331", "KeepContact");
@@ -16,7 +16,7 @@
         returnWithError($conn->connect_error);
 
     }else{
-        $sql = "UPDATE ContactInfo SET firstName = ?, lastName = ?, email= ?, phoneNumber= ? WHERE id = ? AND userID = ?";
+        $sql = "UPDATE ContactInfo SET FirstName = ?, LastName = ?, Email= ?, PhoneNumber= ? WHERE ID = ? AND UserID = ?";
         $sql = $conn->prepare($sql);
         $sql->bind_param("ssssii", $firstName, $lastName, $email, $phoneNumber, $id, $userID);
         

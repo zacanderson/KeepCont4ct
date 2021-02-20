@@ -185,7 +185,7 @@ function modifyContact(ID) {
 	var lastName = fullName[1];
 
 
-	var jsonPayload = '{"firstName" : "' + firstName + '", "lastName" : "' + lastName + '", "phoneNumber" : "' + phoneNumber + '", "email" : "' + email + '", "userID" : ' + userId + '"id" : ' + ID + '}';
+	var jsonPayload = '{"FirstName" : "' + firstName + '", "LastName" : "' + lastName + '", "PhoneNumber" : "' + phoneNumber + '", "Email" : "' + email + '", "UserID" : ' + userId + '"ID" : ' + ID + '}';
 
 	var url = urlBase + '/EditContact.' + extension;
 
