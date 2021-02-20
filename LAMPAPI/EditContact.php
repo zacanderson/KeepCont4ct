@@ -8,6 +8,7 @@
     $email = $inData["Email"];
     $phoneNumber = $inData["PhoneNumber"];
     $userID = $inData["UserID"];
+    $notes = $inData["Notes"]
 
     //connect to database
     $conn = new mysqli("localhost", "NotTheBeast", "WeAdoreCOP4331", "KeepContact");
@@ -16,9 +17,9 @@
         returnWithError($conn->connect_error);
 
     }else{
-        $sql = "UPDATE ContactInfo SET FirstName = ?, LastName = ?, Email= ?, PhoneNumber= ? WHERE ID = ? AND UserID = ?";
+        $sql = "UPDATE ContactInfo SET FirstName = ?, LastName = ?, Email= ?, PhoneNumber= ?, Notes = ? WHERE ID = ? AND UserID = ?";
         $sql = $conn->prepare($sql);
-        $sql->bind_param("ssssii", $firstName, $lastName, $email, $phoneNumber, $id, $userID);
+        $sql->bind_param("sssssii", $firstName, $lastName, $email, $phoneNumber, $notes, $id, $userID);
         
         $sql->execute();
 
