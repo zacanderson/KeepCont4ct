@@ -18,16 +18,24 @@
     <header id="header"><img id="HeaderLogo" src="images/logo.png" alt=""></header>
 
 
-    <div id="myModal" class="modal">
+    <div id="myModal" class="modal" style="display: block;">
 
         <!-- Modal content -->
-        <div class="modal-content" id="modal-content">
+        <div class="modal-content" id="modal-content" style="display: block;">
             <span class="close" onclick="closePopUp()">&times;</span>
-            <h1>Dante Edmonson</h1>
+            <h1 id="t-name">Dante Edmonson</h1>
             <br>
-            <h2>number: 3529429732</h2>
-            <h2>email: danteedmonson@gmail.com</h2>
+            <h2 id ="t-num">number: 3529429732</h2>
+            <h2 id="t-email">email: danteedmonson@gmail.com</h2>
             <h3>note: </h3>
+
+            <button type="button" value="Register" id ="deleteButton" >Delete</button>
+            <button type="button" value="Register" id ="modifyButton" onclick="test2()" >Modify</button>
+         
+            <button type="button" value="Register" id ="saveButton" >Save</button>
+            <button type="button" value="Register" id ="exitButton" >Exit</button>
+
+
 
 
 

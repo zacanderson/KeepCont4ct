@@ -170,6 +170,44 @@ function addContact() {
 
 }
 
+function modifyContact(ID) {
+
+	document.getElementById("contactAddResult").innerHTML = "";
+
+
+
+	var name = document.getElementById(ID+"name").value;
+	var phoneNumber = document.getElementById(ID+"number").value;
+	var email = document.getElementById(ID+"email").value;
+
+	var fullName = name.split(" ");
+	var firstName = fullName[0];
+	var lastName = fullName[1];
+
+
+	var jsonPayload = '{"firstName" : "' + firstName + '", "lastName" : "' + lastName + '", "phoneNumber" : "' + phoneNumber + '", "email" : "' + email + '", "userID" : ' + userId + '"id" : "' + ID + '}';
+
+	var url = urlBase + '/AddContact.' + extension;
+
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try {
+		xhr.onreadystatechange = function () {
+			if (this.readyState == 4 && this.status == 200) {
+				window.location.replace("http://www.keepcont4ct.tech/search2.html");
+			}
+		};
+
+		xhr.send(jsonPayload);
+
+	}
+	catch (err) {
+		document.getElementById("contactAddResult").innerHTML = err.message;
+	}
+
+}
+
 function deleteContact(contactId) {
 
 	
@@ -294,9 +332,10 @@ function searchContacts() {
 
 						document.getElementById(""+res[4]).innerHTML = "<span class=\"close\" onclick=\"closePopUp("+res[4]
 						+")\">&times;</span><h1  id=\""+ID+"name\">"+fName+" "+lName+"</h1><br><h2>number: </h2><h2  id=\""+ID+"number\">"
-						+pNum+"</h2><h2>email: </h2><h2  id=\""+ID+"email\">"+email+"</h2><h3>note: </h3><button type=\"button\" value=\"Delete\" id=\"loginButton\""+
-						" onclick=\"deleteContact("+ID+");\">Delete</button><br><button type=\"button\" value=\"Modify\" id=\"loginButton\" onclick=\"initialModify("+ID+");\""+
-						">Modify</button>"
+						+pNum+"</h2><h2>email: </h2><h2  id=\""+ID+"email\">"+email+"</h2><h3>note: </h3><button type=\"button\" value=\"Delete\" id=\"deleteButton\""+
+						" onclick=\"deleteContact("+ID+");\">Delete</button><br><button type=\"button\" value=\"Modify\" id=\"modifyButton\" onclick=\"initialModify("+ID+");\""+
+						">Modify</button><button type=\"button\" value=\"Save\" id =\"saveButton\" onclick=\"modifyContact("+ID+")\" >Save</button>"+
+						"<button type=\"button\" value=\"Register\" id =\"exitButton\" onclick=\"closePopUp("+res[4]+")\" >Exit</button>"
 
 					}
 
@@ -327,6 +366,17 @@ function initialModify(ID) {
 	document.getElementById(ID+"name").contentEditable = "true";
 	document.getElementById(ID+"number").contentEditable = "true";
 	document.getElementById(ID+"email").contentEditable = "true";
+
+	document.getElementById("saveButton").style.display = "inline-block";
+	document.getElementById("exitButton").style.display = "inline-block";
+
+	document.getElementById("modifyButton").style.display = "none";
+	document.getElementById("deleteButton").style.display = "none";
+
+	
+
+
+
 	//name.style.contentEditable = "true";
 	///num.style.contentEditable = "true";
 	//email.style.contentEditable = "true";
@@ -383,5 +433,20 @@ function test() {
 	document.getElementById("searchR").innerHTML = cB;
 
 	mInfo = "<span class=\"close\" onclick=\"closePopUp()\">&times;</span><h1>"+fName+" "+lName+"</h1><br><h2>number: "+pNum+"</h2><h2>email: "+email+"</h2><h3>note: </h3>"
+}
+
+function test2() {
+	document.getElementById("saveButton").style.display = "inline-block";
+	document.getElementById("exitButton").style.display = "inline-block";
+
+	document.getElementById("modifyButton").style.display = "none";
+	document.getElementById("deleteButton").style.display = "none";
+
+
+	var name = document.getElementById("t-name");
+	var num = document.getElementById("t-num");
+	var email = document.getElementById("t-email");
+
+
 }
 
