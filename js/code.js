@@ -170,13 +170,13 @@ function addContact() {
 
 }
 
-function deleteContact(userId) {
+function deleteContact(contactId) {
 
 	document.getElementById("contactDeleteResult").innerHTML = "";
 	firstName = document.getElementById("fname").value;
 	lastName = document.getElementById("lname").value;
 
-	var jsonPayload = '{"FirstName" : "' + firstName + '", "LastName" : "' + lastName + '","UserID" : ' + userId + '}';
+	var jsonPayload = '{"ID" : "' + contactId + '","UserID" : ' + userId + '}';
 
 	var url = urlBase + '/DeleteContact.' + extension;
 
@@ -193,6 +193,8 @@ function deleteContact(userId) {
 			}
 		};
 		xhr.send(jsonPayload);
+		window.location.replace("http://www.keepcont4ct.tech/search2.html");
+
 	}
 	catch (err)
 	{
@@ -327,7 +329,7 @@ function searchContacts() {
 
 						document.getElementById(""+res[4]).innerHTML = "<span class=\"close\" onclick=\"closePopUp("+res[4]
 						+")\">&times;</span><h1>"+fName+" "+lName+"</h1><br><h2>number: "+pNum+"</h2><h2>email: "
-						+email+"</h2><h3>note: </h3>"
+						+email+"</h2><h3>note: </h3><button type=\"button\" value=\"Delete\" id=\"loginButton\" onclick=\"deleteContact("+ID+");\">Login</button>"
 
 					}
 
