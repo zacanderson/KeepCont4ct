@@ -237,7 +237,7 @@ label
 
 
 
-#registerButton, #loginButton, #addButton, #searchButton, #modifyButton
+#registerButton, #loginButton, #addButton, #searchButton, .modifyButton
 {
     /*
     font-size: 30px;
@@ -253,12 +253,12 @@ label
     height: 9%;
 }
 
-#modifyButton {
+.modifyButton {
   width: 100%;
 }
 
 
-#registerButton:hover, #loginButton:hover, #addButton:hover, #searchButton:hover, #modifyButton:hover, #saveButton:hover{
+#registerButton:hover, #loginButton:hover, #addButton:hover, #searchButton:hover, .modifyButton:hover, .saveButton:hover{
     /*
     background-color: #00d5124f;
     color: #FFFFFF;
@@ -270,7 +270,7 @@ label
     border-color: aquamarine;
 }
 
-#deleteButton
+.deleteButton
 {
   
     background-color: red;
@@ -282,7 +282,7 @@ label
 
 }
 
-#exitButton {
+.exitButton {
 
   display: none;
    background-color: red;
@@ -292,7 +292,7 @@ label
     margin-bottom: 10px;
 }
 
-#saveButton {
+.saveButton {
 
   display: none;
   background-color: aquamarine;
@@ -304,7 +304,7 @@ label
 
 }
 
-#deleteButton:hover, #exitButton:hover{
+.deleteButton:hover, .exitButton:hover{
 
     background-color: #ffffff; /* Green */
     color: red;

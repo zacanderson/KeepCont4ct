@@ -334,10 +334,10 @@ function searchContacts() {
 
 						document.getElementById(""+res[4]).innerHTML = "<span class=\"close\" onclick=\"closePopUp("+res[4]
 						+")\">&times;</span><div style=\"width: 90%; margin-right: 0%;\"><h1  id=\""+ID+"name\">"+fName+" "+lName+"</h1></div><br><h2>number: </h2><h2  id=\""+ID+"number\">"
-						+pNum+"</h2><h2>email: </h2><h2  id=\""+ID+"email\">"+email+"</h2><h3>note: </h3><button type=\"button\" value=\"Delete\" id=\"deleteButton\""+
-						" onclick=\"deleteContact("+ID+");\">Delete</button><br><button type=\"button\" value=\"Modify\" id=\"modifyButton\" onclick=\"initialModify("+ID+");\""+
-						">Modify</button><button type=\"button\" value=\"Save\" id =\"saveButton\" onclick=\"modifyContact("+ID+")\" >Save</button>"+
-						"<button type=\"button\" value=\"Register\" id =\"exitButton\" onclick=\"closePopUp("+res[4]+")\" >Exit</button>"
+						+pNum+"</h2><h2>email: </h2><h2  id=\""+ID+"email\">"+email+"</h2><h3>note: </h3><button type=\"button\" value=\"Delete\" class=\"deleteButton\""+
+						" id=\""+ID+"delete\" onclick=\"deleteContact("+ID+");\">Delete</button><br><button type=\"button\" value=\"Modify\" class=\"modifyButton\" id=\""+ID+"modify\" onclick=\"initialModify("+ID+");\""+
+						">Modify</button><button type=\"button\" value=\"Save\" class =\"saveButton\" id=\""+ID+"save\" onclick=\"modifyContact("+ID+")\" >Save</button>"+
+						"<button type=\"button\" value=\"Register\" class =\"exitButton\" id=\""+ID+"exit\" onclick=\"closePopUp("+res[4]+")\" >Exit</button>"
 
 					}
 
@@ -369,11 +369,11 @@ function initialModify(ID) {
 	document.getElementById(ID+"number").contentEditable = "true";
 	document.getElementById(ID+"email").contentEditable = "true";
 
-	document.getElementById("saveButton").style.display = "inline-block";
-	document.getElementById("exitButton").style.display = "inline-block";
+	document.getElementById(ID+"save").style.display = "inline-block";
+	document.getElementById(ID+"exit").style.display = "inline-block";
 
-	document.getElementById("modifyButton").style.display = "none";
-	document.getElementById("deleteButton").style.display = "none";
+	document.getElementById(ID+"modify").style.display = "none";
+	document.getElementById(ID+"delete").style.display = "none";
 
 	
 
@@ -419,11 +419,11 @@ function closePopUp(ID) {
 	document.getElementById(ID+"number").contentEditable = "false";
 	document.getElementById(ID+"email").contentEditable = "false";
 
-	document.getElementById("saveButton").style.display = "none";
-	document.getElementById("exitButton").style.display = "none";
+	document.getElementById(ID+"save").style.display = "none";
+	document.getElementById(ID+"exit").style.display = "none";
 
-	document.getElementById("modifyButton").style.display = "inline-block";
-	document.getElementById("deleteButton").style.display = "inline-block";
+	document.getElementById(ID+"modify").style.display = "inline-block";
+	document.getElementById(ID+"delete").style.display = "inline-block";
 
 	modal2.style.display = "none";
 
