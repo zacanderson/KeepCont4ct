@@ -195,8 +195,9 @@ function modifyContact(ID) {
 	try {
 		xhr.onreadystatechange = function () {
 			if (this.readyState == 4 && this.status == 200) {
-				console.log(JSON.parse(xhr.responseText))
-				//window.location.replace("http://www.keepcont4ct.tech/search2.html");
+				closePopUp(ID);
+				searchContacts();
+				
 			}
 		};
 
