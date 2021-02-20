@@ -37,8 +37,7 @@
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+   }
 
 html {
   font-family: sans-serif;
@@ -8155,8 +8154,8 @@ h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
   line-height: 1.5;
   font-weight: 400;
-  font-family: "Poppins", Arial, sans-serif;
-  color: #000; }
+  font-family: 'Share Tech Mono', monospace;
+  color: rgb(255, 255, 255); }
 
 .bg-primary {
   background: #1089ff !important; }

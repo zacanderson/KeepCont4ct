@@ -16,7 +16,7 @@
 	else
 	{
 		//Search by first name partial completion
-		$sql = "SELECT firstName, lastName, phoneNumber, email, ID FROM ContactInfo where firstName like ? and UserID = ?";
+		$sql = "SELECT firstName, lastName, phoneNumber, email, ID FROM ContactInfo where CONCAT(firstName, ' ', lastName) like ? and UserID = ?";
 		$sql = $conn->prepare($sql);
 		$search = '%' . $search . '%';
 		$sql->bind_param("si", $search, $UserID);

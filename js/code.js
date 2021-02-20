@@ -124,7 +124,7 @@ function readCookie() {
 		window.location.href = "index.html";
 	}
 	else {
-		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
+		document.getElementById("userName2").innerHTML = "Logged in as " + firstName + " " + lastName;
 	}
 }
 
@@ -170,13 +170,51 @@ function addContact() {
 
 }
 
-function deleteContact(userId) {
+function modifyContact(ID) {
 
-	document.getElementById("contactDeleteResult").innerHTML = "";
-	firstName = document.getElementById("fname").value;
-	lastName = document.getElementById("lname").value;
+	//document.getElementById("contactAddResult").innerHTML = "";
 
-	var jsonPayload = '{"FirstName" : "' + firstName + '", "LastName" : "' + lastName + '","UserID" : ' + userId + '}';
+
+
+	var name = document.getElementById(ID+"name").innerText;
+	var phoneNumber = document.getElementById(ID+"number").innerText;
+	var email = document.getElementById(ID+"email").innerText;
+
+	var fullName = name.split(" ");
+	var firstName = fullName[0];
+	var lastName = fullName[1];
+
+
+	var jsonPayload = '{"FirstName" : "' + firstName + '", "LastName" : "' + lastName + '", "PhoneNumber" : "' + phoneNumber + '", "Email" : "' + email + '", "UserID" : ' + userId + ', "ID" : ' + ID + '}';
+
+	var url = urlBase + '/EditContact.' + extension;
+
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try {
+		xhr.onreadystatechange = function () {
+			if (this.readyState == 4 && this.status == 200) {
+				closePopUp(ID);
+				searchContacts();
+				
+			}
+		};
+
+		xhr.send(jsonPayload);
+
+	}
+	catch (err) {
+		document.getElementById("contactAddResult").innerHTML = err.message;
+	}
+
+}
+
+function deleteContact(contactId) {
+
+	
+
+	var jsonPayload = '{"ID" : "' + contactId + '","UserID" : ' + userId + '}';
 
 	var url = urlBase + '/DeleteContact.' + extension;
 
@@ -189,10 +227,12 @@ function deleteContact(userId) {
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-				document.getElementById("contactDeleteResult").innerHTML = "Contact(s) removed";
+				window.location.replace("http://www.keepcont4ct.tech/search2.html");
 			}
 		};
 		xhr.send(jsonPayload);
+		
+
 	}
 	catch (err)
 	{
@@ -250,6 +290,7 @@ function searchContacts() {
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
+	/*
 	if (srch === "") {
 		const contactInfo = document.querySelector('#contactInfo');
 		const myModal = document.querySelector('#myModal');
@@ -264,7 +305,9 @@ function searchContacts() {
 		}
 
 	}
-	else {
+	*/
+
+	//else {
 		try {
 			xhr.onreadystatechange = function () {
 				if (this.readyState == 4 && this.status == 200) {
@@ -307,52 +350,22 @@ function searchContacts() {
 
 						document.getElementById("contactInfo").innerHTML = cB;
 
-						//cB = cB + "<div class=\"contactsBox\" id=\""
-						//+res[4] + "-"+ fName+"\" onclick=\"showPopUp("+res[4]+")\">"+
-						//"<div class=\"cBox\">"+ res[0]+" "+res[1]+"</div><div class=\"cBox\" >"+res[2]+"</div>"+"</div>";
-
-
-
-
 						cB = cB + "<tr id=\""+res[4] + "-"+ fName+"\" onclick=\"showPopUp("+res[4]+")\"><th scope=\"row\"></th><td>"
 						+fName+"</td><td>"+lName+"</td><td>"+pNum+"</td></tr>";
 
-						//elem.className = "contactsBox";
-						//elem.id = res[4] + "-"+ fName;
-						//elem.onclick = "showPopUp(105)";
-						//elem.addEventListener("click",showPopUp(res[4], false) );
-						//const elemTextBoxName = document.createElement('div');
-						//elemTextBoxName.className = "cBox";
-						//const elemTextBoxNum = document.createElement('div');
-						//elemTextBoxNum.className = "cBox"; 
-
-
-						//const elemTextName = document.createTextNode(res[0] + " " + res[1]);
-						//const elemTextNum = document.createTextNode(res[2]);
-
-						//elemTextBoxName.appendChild(elemTextName);
-						//elemTextBoxNum.appendChild(elemTextNum);
-
-						//elem.appendChild(elemTextBoxName);
-						//elem.appendChild(elemTextBoxNum);
 
 						const popUpBox = document.createElement('div');
-						popUpBox.className = "modal-content";
+						popUpBox.className = "modal-content2";
 						popUpBox.id = res[4];
-						//popUpBox.appendChild(document.createTextNode(jsonObject.results[i]));
-
-
 
 						document.getElementById("myModal").appendChild(popUpBox);
 
-
-						//	if (i < jsonObject.results.length - 1) {
-						//	contactList += "<br />\r\n";
-						//}
-
 						document.getElementById(""+res[4]).innerHTML = "<span class=\"close\" onclick=\"closePopUp("+res[4]
-						+")\">&times;</span><h1>"+fName+" "+lName+"</h1><br><h2>number: "+pNum+"</h2><h2>email: "
-						+email+"</h2><h3>note: </h3>"
+						+")\">&times;</span><div style=\"width: 90%; margin-right: 0%;\"><h1  id=\""+ID+"name\">"+fName+" "+lName+"</h1></div><br><h2>number: </h2><h2  id=\""+ID+"number\">"
+						+pNum+"</h2><h2>email: </h2><h2  id=\""+ID+"email\">"+email+"</h2><h3>note: </h3><button type=\"button\" value=\"Delete\" class=\"deleteButton\""+
+						" id=\""+ID+"delete\" onclick=\"deleteContact("+ID+");\">Delete</button><br><button type=\"button\" value=\"Modify\" class=\"modifyButton\" id=\""+ID+"modify\" onclick=\"initialModify("+ID+");\""+
+						">Modify</button><button type=\"button\" value=\"Save\" class =\"saveButton\" id=\""+ID+"save\" onclick=\"modifyContact("+ID+")\" >Save</button>"+
+						"<button type=\"button\" value=\"Register\" class =\"exitButton\" id=\""+ID+"exit\" onclick=\"closePopUp("+res[4]+")\" >Exit</button>"
 
 					}
 
@@ -366,7 +379,7 @@ function searchContacts() {
 		catch (err) {
 			document.getElementById("contactSearchResult").innerHTML = err.message;
 		}
-	}
+	//}
 }
 
 function initialSearch() {
@@ -377,10 +390,44 @@ function initialSearch() {
 
 }
 
+
+function initialModify(ID) {
+
+	document.getElementById(ID+"name").contentEditable = "true";
+	document.getElementById(ID+"number").contentEditable = "true";
+	document.getElementById(ID+"email").contentEditable = "true";
+
+	document.getElementById(ID+"save").style.display = "inline-block";
+	document.getElementById(ID+"exit").style.display = "inline-block";
+
+	document.getElementById(ID+"modify").style.display = "none";
+	document.getElementById(ID+"delete").style.display = "none";
+
+	
+
+
+
+	//name.style.contentEditable = "true";
+	///num.style.contentEditable = "true";
+	//email.style.contentEditable = "true";
+
+
+
+	//window.location.href = "http://www.keepcont4ct.tech/search2.html?" + srch;
+
+}
+
 function fillSearchBar() {
+
+
 	const queryString = location.search.substring(1);
-	const qString = document.createTextNode(queryString);
-	document.getElementById("inpt_search").value = "" + queryString;
+
+	if(queryString == "undefined")
+	{
+		queryString = "";
+	}
+	var qS = queryString.split("%20");
+	document.getElementById("inpt_search").value = "" + qS[0] + " " + qS[1];
 	searchContacts();
 }
 
@@ -398,12 +445,20 @@ function showPopUp(idNum) {
 
 }
 
-function closePopUp(idNum) {
+function closePopUp(ID) {
 
 	var modal = document.getElementById("myModal");
-	var modal2 = document.getElementById(""+idNum);
+	var modal2 = document.getElementById(""+ID);
 
-	//var modalInfo = document.getElementById("modal-content");
+	document.getElementById(ID+"name").contentEditable = "false";
+	document.getElementById(ID+"number").contentEditable = "false";
+	document.getElementById(ID+"email").contentEditable = "false";
+
+	document.getElementById(ID+"save").style.display = "none";
+	document.getElementById(ID+"exit").style.display = "none";
+
+	document.getElementById(ID+"modify").style.display = "inline-block";
+	document.getElementById(ID+"delete").style.display = "inline-block";
 
 	modal2.style.display = "none";
 
@@ -423,5 +478,20 @@ function test() {
 	document.getElementById("searchR").innerHTML = cB;
 
 	mInfo = "<span class=\"close\" onclick=\"closePopUp()\">&times;</span><h1>"+fName+" "+lName+"</h1><br><h2>number: "+pNum+"</h2><h2>email: "+email+"</h2><h3>note: </h3>"
+}
+
+function test2() {
+	document.getElementById("saveButton").style.display = "inline-block";
+	document.getElementById("exitButton").style.display = "inline-block";
+
+	document.getElementById("modifyButton").style.display = "none";
+	document.getElementById("deleteButton").style.display = "none";
+
+
+	var name = document.getElementById("t-name");
+	var num = document.getElementById("t-num");
+	var email = document.getElementById("t-email");
+
+
 }
 
