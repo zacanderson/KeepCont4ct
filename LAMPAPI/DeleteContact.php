@@ -17,7 +17,6 @@
 		$sql = "DELETE FROM ContactInfo WHERE ID = ? AND UserID = ?";
 		$sql = $conn->prepare($sql);
 		$sql->bind_param("si", $ID, $UserID);
-		$sql->execute();
 		if($sql->execute() == FALSE)
 		{
 			returnWithError( $conn->error);
