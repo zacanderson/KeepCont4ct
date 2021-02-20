@@ -187,7 +187,7 @@ function modifyContact(ID) {
 
 	var jsonPayload = '{"firstName" : "' + firstName + '", "lastName" : "' + lastName + '", "phoneNumber" : "' + phoneNumber + '", "email" : "' + email + '", "userID" : ' + userId + '"id" : "' + ID + '}';
 
-	var url = urlBase + '/AddContact.' + extension;
+	var url = urlBase + '/EditContact.' + extension;
 
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
