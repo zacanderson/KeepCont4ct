@@ -187,11 +187,11 @@ function deleteContact(contactId) {
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-				document.getElementById("contactDeleteResult").innerHTML = "Contact(s) removed";
+				window.location.replace("http://www.keepcont4ct.tech/search2.html");
 			}
 		};
 		xhr.send(jsonPayload);
-		window.location.replace("http://www.keepcont4ct.tech/search2.html");
+		
 
 	}
 	catch (err)
@@ -327,7 +327,7 @@ function searchContacts() {
 
 						document.getElementById(""+res[4]).innerHTML = "<span class=\"close\" onclick=\"closePopUp("+res[4]
 						+")\">&times;</span><h1>"+fName+" "+lName+"</h1><br><h2>number: "+pNum+"</h2><h2>email: "
-						+email+"</h2><h3>note: </h3><button type=\"button\" value=\"Delete\" id=\"loginButton\" onclick=\"deleteContact("+ID+");\">Login</button>"
+						+email+"</h2><h3>note: </h3><button type=\"button\" value=\"Delete\" id=\"loginButton\" onclick=\"deleteContact("+ID+");\">Delete</button>"
 
 					}
 
