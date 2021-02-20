@@ -8,7 +8,7 @@
     $email = $inData["Email"];
     $phoneNumber = $inData["PhoneNumber"];
     $userID = $inData["UserID"];
-    $notes = $inData["Notes"]
+    $notes = $inData["Notes"];
 
     //connect to database
     $conn = new mysqli("localhost", "NotTheBeast", "WeAdoreCOP4331", "KeepContact");
