@@ -172,7 +172,7 @@ function addContact() {
 
 function modifyContact(ID) {
 
-	document.getElementById("contactAddResult").innerHTML = "";
+	//document.getElementById("contactAddResult").innerHTML = "";
 
 
 
