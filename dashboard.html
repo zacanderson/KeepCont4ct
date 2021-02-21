@@ -13,12 +13,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
 
-<script>
-	document.addEventListener('DOMContentLoaded', function() 
-	{
-		readCookie();
-	}, false);
-	</script>
 
 
 </head>
@@ -50,7 +44,7 @@
           <input type="text" id="lname" name="lname" placeholder="Last Name"><br>
           <input type="text" id="phonenum" name="phonenum" placeholder="Phone Number"><br>
           <input type="text" id="email" name="email" placeholder="Email"><br>
-          
+          <textarea id="notes"  rows="4" cols="50" placeholder="Notes"></textarea><br>
           <button type="button" value="Register" id ="addButton" onclick="addContact()">Add</button>
           <span id="contactAddResult"></span>
 

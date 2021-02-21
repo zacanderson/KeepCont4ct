@@ -58,7 +58,10 @@ label
  
 }
 
-
+#notes {
+  width: 80%;
+  margin-bottom: 3%;
+}
 #frontDiv
 {
     width: 80%;
