@@ -160,6 +160,12 @@ function addContact() {
 		xhr.onreadystatechange = function () {
 			if (this.readyState == 4 && this.status == 200) {
 				document.getElementById("contactAddResult").innerHTML = "Contact(s) added";
+				document.getElementById("fname").value = "";
+				document.getElementById("lname").value = "";
+				document.getElementById("phonenum").value = "";
+				document.getElementById("email").value = "";
+				document.getElementById("notes").value = "";
+
 			}
 		};
 
