@@ -146,8 +146,10 @@ function addContact() {
 	lastName = document.getElementById("lname").value;
 	phoneNumber = document.getElementById("phonenum").value;
 	email = document.getElementById("email").value;
+	notes = document.getElementById("notes").value;
 
-	var jsonPayload = '{"FirstName" : "' + firstName + '", "LastName" : "' + lastName + '", "PhoneNumber" : "' + phoneNumber + '", "Email" : "' + email + '", "UserID" : ' + userId + '}';
+
+	var jsonPayload = '{"FirstName" : "' + firstName + '", "LastName" : "' + lastName + '", "PhoneNumber" : "' + phoneNumber + '", "Email" : "' + email + '", "UserID" : ' + userId + ',"Notes" : "' + notes + '"}';
 
 	var url = urlBase + '/AddContact.' + extension;
 
@@ -179,6 +181,8 @@ function modifyContact(ID) {
 	var name = document.getElementById(ID+"name").innerText;
 	var phoneNumber = document.getElementById(ID+"number").innerText;
 	var email = document.getElementById(ID+"email").innerText;
+	var notes = document.getElementById(ID+"notes").innerText;
+
 
 	var fullName = name.split(" ");
 	var firstName = fullName[0];
@@ -190,7 +194,7 @@ function modifyContact(ID) {
 	}
 
 
-	var jsonPayload = '{"FirstName" : "' + firstName + '", "LastName" : "' + lastName + '", "PhoneNumber" : "' + phoneNumber + '", "Email" : "' + email + '", "UserID" : ' + userId + ', "ID" : ' + ID + '}';
+	var jsonPayload = '{"FirstName" : "' + firstName + '", "LastName" : "' + lastName + '", "PhoneNumber" : "' + phoneNumber + '", "Email" : "' + email + '", "UserID" : ' + userId + ', "ID" : ' + ID + ',"Notes" : "' + notes + '"}';
 
 	var url = urlBase + '/EditContact.' + extension;
 
@@ -324,6 +328,7 @@ function searchContacts() {
 						var pNum = res[2];
 						var email = res[3];
 						var ID = res[4];
+						var notes = res[5];
 
 						const elem = document.createElement('div');
 
@@ -341,7 +346,7 @@ function searchContacts() {
 
 						document.getElementById(""+res[4]).innerHTML = "<span class=\"close\" onclick=\"closePopUp("+res[4]
 						+")\">&times;</span><div style=\"width: 90%; margin-right: 0%;\"><h1  id=\""+ID+"name\">"+fName+" "+lName+"</h1></div><br><h2>number: </h2><h2  id=\""+ID+"number\">"
-						+pNum+"</h2><h2>email: </h2><h2  id=\""+ID+"email\">"+email+"</h2><h3>note: </h3><button type=\"button\" value=\"Delete\" class=\"deleteButton\""+
+						+pNum+"</h2><h2>email: </h2><h2  id=\""+ID+"email\">"+email+"</h2><h3>note: </h3><h2  id=\""+ID+"notes\">"+notes+"</h2><button type=\"button\" value=\"Delete\" class=\"deleteButton\""+
 						" id=\""+ID+"delete\" onclick=\"deleteContact("+ID+");\">Delete</button><br><button type=\"button\" value=\"Modify\" class=\"modifyButton\" id=\""+ID+"modify\" onclick=\"initialModify("+ID+");\""+
 						">Modify</button><button type=\"button\" value=\"Save\" class =\"saveButton\" id=\""+ID+"save\" onclick=\"modifyContact("+ID+")\" >Save</button>"+
 						"<button type=\"button\" value=\"Register\" class =\"exitButton\" id=\""+ID+"exit\" onclick=\"closePopUp("+res[4]+")\" >Exit</button>"
@@ -375,6 +380,8 @@ function initialModify(ID) {
 	document.getElementById(ID+"name").contentEditable = "true";
 	document.getElementById(ID+"number").contentEditable = "true";
 	document.getElementById(ID+"email").contentEditable = "true";
+	document.getElementById(ID+"notes").contentEditable = "true";
+
 
 	document.getElementById(ID+"save").style.display = "inline-block";
 	document.getElementById(ID+"exit").style.display = "inline-block";
@@ -439,6 +446,8 @@ function closePopUp(ID) {
 	document.getElementById(ID+"name").contentEditable = "false";
 	document.getElementById(ID+"number").contentEditable = "false";
 	document.getElementById(ID+"email").contentEditable = "false";
+	document.getElementById(ID+"notes").contentEditable = "false";
+
 
 	document.getElementById(ID+"save").style.display = "none";
 	document.getElementById(ID+"exit").style.display = "none";

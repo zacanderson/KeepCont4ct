@@ -20,15 +20,15 @@
 	}, false);
 	</script>
 
-
 </head>
 <body style="background-image: url(images/background2.jpg);" id="bd">
 
  
     <header id="header">
       
-
+      <a href="/dashboard.html">
       <img id="HeaderLogo" src="images/logo.png" alt="">
+      </a>
       <div type="button" value="Register" id ="logOutButton" onclick="doLogout()">LogOut</button>
     </header>
   <!--add background image-->
@@ -50,7 +50,7 @@
           <input type="text" id="lname" name="lname" placeholder="Last Name"><br>
           <input type="text" id="phonenum" name="phonenum" placeholder="Phone Number"><br>
           <input type="text" id="email" name="email" placeholder="Email"><br>
-          
+          <textarea id="notes"  rows="4" cols="50" placeholder="Notes"></textarea><br>
           <button type="button" value="Register" id ="addButton" onclick="addContact()">Add</button>
           <span id="contactAddResult"></span>
 
