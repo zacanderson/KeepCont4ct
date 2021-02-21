@@ -327,29 +327,30 @@ function searchContacts() {
 						var lName = res[1];
 						var pNum = res[2];
 						var email = res[3];
-						var ID = res[4];
-						var notes = res[5];
+						var notes = res[4];
+						var ID = res[5];
+						
 
 						const elem = document.createElement('div');
 
 						document.getElementById("contactInfo").innerHTML = cB;
 
-						cB = cB + "<tr id=\""+res[4] + "-"+ fName+"\" onclick=\"showPopUp("+res[4]+")\"><th scope=\"row\"></th><td>"
+						cB = cB + "<tr id=\""+ID + "-"+ fName+"\" onclick=\"showPopUp("+ID+")\"><th scope=\"row\"></th><td>"
 						+fName+"</td><td>"+lName+"</td><td>"+pNum+"</td></tr>";
 
 
 						const popUpBox = document.createElement('div');
 						popUpBox.className = "modal-content2";
-						popUpBox.id = res[4];
+						popUpBox.id = ID;
 
 						document.getElementById("myModal").appendChild(popUpBox);
 
-						document.getElementById(""+res[4]).innerHTML = "<span class=\"close\" onclick=\"closePopUp("+res[4]
+						document.getElementById(""+ID).innerHTML = "<span class=\"close\" onclick=\"closePopUp("+ID
 						+")\">&times;</span><div style=\"width: 90%; margin-right: 0%;\"><h1  id=\""+ID+"name\">"+fName+" "+lName+"</h1></div><br><h2>number: </h2><h2  id=\""+ID+"number\">"
 						+pNum+"</h2><h2>email: </h2><h2  id=\""+ID+"email\">"+email+"</h2><h3>note: </h3><h2  id=\""+ID+"notes\">"+notes+"</h2><button type=\"button\" value=\"Delete\" class=\"deleteButton\""+
 						" id=\""+ID+"delete\" onclick=\"deleteContact("+ID+");\">Delete</button><br><button type=\"button\" value=\"Modify\" class=\"modifyButton\" id=\""+ID+"modify\" onclick=\"initialModify("+ID+");\""+
 						">Modify</button><button type=\"button\" value=\"Save\" class =\"saveButton\" id=\""+ID+"save\" onclick=\"modifyContact("+ID+")\" >Save</button>"+
-						"<button type=\"button\" value=\"Register\" class =\"exitButton\" id=\""+ID+"exit\" onclick=\"closePopUp("+res[4]+")\" >Exit</button>"
+						"<button type=\"button\" value=\"Register\" class =\"exitButton\" id=\""+ID+"exit\" onclick=\"closePopUp("+ID+")\" >Exit</button>"
 
 					}
 
