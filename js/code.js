@@ -184,6 +184,11 @@ function modifyContact(ID) {
 	var firstName = fullName[0];
 	var lastName = fullName[1];
 
+	if(lastName == undefined){
+		lastName = " ";
+
+	}
+
 
 	var jsonPayload = '{"FirstName" : "' + firstName + '", "LastName" : "' + lastName + '", "PhoneNumber" : "' + phoneNumber + '", "Email" : "' + email + '", "UserID" : ' + userId + ', "ID" : ' + ID + '}';
 
