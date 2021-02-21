@@ -31,7 +31,7 @@
 					$searchResults .= ",";
 				}
 				$searchCount++;
-				$searchResults .= '"' . $row["firstName"] . '|' . $row["lastName"] . '|' . $row["phoneNumber"] . '|' . $row["email"] . '|' . $row["ID"] . '"';
+				$searchResults .= '"' . $row["firstName"] . '|' . $row["lastName"] . '|' . $row["phoneNumber"] . '|' . $row["email"] . $row["notes"] . '|' . $row["ID"] . '"';
 			}
 			// return json file with array where each index is a contact.
 			returnWithInfo( $searchResults );
