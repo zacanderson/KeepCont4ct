@@ -8,50 +8,63 @@
   <script type="text/javascript" src="js/code.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="scss/style3.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
 
-  <script>
+<script>
 	document.addEventListener('DOMContentLoaded', function() 
 	{
 		readCookie();
 	}, false);
 	</script>
 
-
 </head>
-<body style="background-image: url(images/background2.jpg);">
+<body style="background-image: url(images/background2.jpg);" id="bd">
 
- 
-    <header id="header"><img id="HeaderLogo" src="images/logo.png" alt=""></header>
+ <a href="/dashboard.html">
+    <header id="header">
+      
+      
+      <img id="HeaderLogo" src="images/logo.png" alt="">
+      
+      <div type="button" value="Register" id ="logOutButton" onclick="doLogout()">LogOut</button>
+    </header>
+ </a>
   <!--add background image-->
   
   <div class="container">
-    <h1 id="userName">Welcome </h1>
+   
+
+    <h1 id="userName2" class="line-1 anim-typewriter"></h1>
   </div>
 
-  <div class="container">
+  <div class="container2">
     <div class="row">
-      <div class="column">
-        <h3>Add a Contact</h3>
+      <div class="card">
+        <div>
+        <h1>Add a Contact</h1>
         <!--add form-->
-        
+        <br><br><br><br><br>
           <input type="text" id="fname" name="fname" placeholder="First Name"><br>
           <input type="text" id="lname" name="lname" placeholder="Last Name"><br>
           <input type="text" id="phonenum" name="phonenum" placeholder="Phone Number"><br>
           <input type="text" id="email" name="email" placeholder="Email"><br>
-          
+          <textarea id="notes"  rows="4" cols="50" placeholder="Notes"></textarea><br>
           <button type="button" value="Register" id ="addButton" onclick="addContact()">Add</button>
           <span id="contactAddResult"></span>
 
-        
+        </div>
       </div>
+   
 
-      <div class="column">
-        <h3>Search For Contact</h3>
+      <div class="card">
+        <h1>Search For Contact</h1>
         <!--search form-->
-        
-          <input type="text" id="searchText" name="fname" placeholder="First Name"><br>
-          <input type="text" id="lastName" name="lname" placeholder="Last Name"><br>
+        <br><br><br><br><br>
+          <input type="text" id="searchText" name="fname" placeholder="Name"><br>
+          
           <button type="button" value="Register" id ="searchButton" onclick="initialSearch()">Search</button>
           <span id="contactSearchResult"></span>
        

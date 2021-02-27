@@ -6,28 +6,54 @@
     <script type="text/javascript" src="js/code.js"></script>
     <link href="css/styles2.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link href="scss/style3.css" rel="stylesheet">
+
 
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
 
 
 
 </head>
 
 
-<body style="background-color: white" >
-    <header id="header"><img id="HeaderLogo" src="images/logo.png" alt=""></header>
+<body style="background-color: white">
+    <header id="header">
 
 
-    <div id="myModal" class="modal">
+
+        <img id="HeaderLogo" src="images/logo.png" alt="" href="/dashboard.html">
+        <div type="button" value="Register" id="logOutButton" onclick="doLogout()">LogOut</div>
+
+    </header>
+
+
+    <div id="myModal" class="modal" style="display: block;">
 
         <!-- Modal content -->
-        <div class="modal-content" id="modal-content">
+        <div class="modal-content2" id="modal-content" style="display: block;">
             <span class="close" onclick="closePopUp()">&times;</span>
-            <h1>Dante Edmonson</h1>
+
+            <div style="width: 90%; margin-right: 0%;">
+                <h1 id="t-name">Dante Edmonson</h1>
+            </div>
+            
             <br>
-            <h2>number: 3529429732</h2>
-            <h2>email: danteedmonson@gmail.com</h2>
-            <h3>note: </h3>
+            <h2 id="t-num" class="pInfo">number: 3529429732</h2>
+            <h2 id="t-email" class="pInfo">email: danteedmonson@gmail.com</h2>
+            <h3 class="pInfo">note: </h3>
+
+            <button type="button" value="Register" class="deleteButton">Delete</button>
+            <button type="button" value="Register" class="modifyButton" onclick="test2()">Modify</button>
+
+            <div style="text-align: center;">
+                <button type="button" value="Register" class="saveButton" onclick="modifyContact(ID)">Save</button>
+                <button type="button" value="Register" class="exitButton">Exit</button>
+            </div>
+
+
 
 
 
@@ -38,7 +64,7 @@
 
     </div>
 
-    <div id="sDiv"> 
+    <div id="sDiv">
 
         <div class="search">
             <input id="inpt_search" type="text" value="" onkeyup="searchContacts()" />
@@ -53,17 +79,17 @@
             <div id="contactInfo">
                 <div class="table-wrap">
                     <table class="table table-bordered table-dark table-hover">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Email</th>
-                        </tr>
-                      </thead>
-                      <tbody id ="searchR">
-                     
-                      </tbody>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody id="searchR">
+
+                        </tbody>
                     </table>
                 </div>
 

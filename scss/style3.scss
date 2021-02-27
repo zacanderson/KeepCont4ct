@@ -1,0 +1,310 @@
+$w: 13em;
+$f: 19/13;
+$g: 1em;
+$n: 7;
+$c: #000000;
+$c2: rgb(0, 0, 0);
+
+$bg-color: hsl(256,33,10);
+$dot-color: hsl(256,33,70);
+
+// Dimensions
+$dot-size: 1px;
+$dot-space: 22px;
+
+body {
+	--h: #{$f*$w};
+	//display: grid;
+	grid-template-columns: repeat(var(--n, #{$n}), var(--w, #{$w}));
+	grid-gap: 1em;
+	//place-content: center;
+	margin: 0;
+	//min-height: 100vh;
+	//background: #333;
+	
+	@for $i from 1 through $n {
+		@media (max-width: ($n - $i + 1)*$w + ($n - $i + 2)*$g) {
+			@if $i == $n {
+				--w: 100%;
+				--h: #{$f*100vw};
+			}
+			@else { --n: #{$n - $i}; }
+		}
+	}
+}
+
+.card {
+
+
+    flex: 50%;
+    padding: 0% 5% 5% 5%;
+    margin: 3%;
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+
+
+
+	overflow: hidden;
+	position: relative;
+	//height: var(--h);
+	border-radius: 7px;
+	box-shadow: 2px 2px 17px aquamarine;
+	background: black;
+
+    $border: 5px;
+    color: #FFF;
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(51, 51, 51));;
+    background-clip: padding-box; /* !importanté */
+    border: solid $border aquamarine; /* !importanté */
+    border-radius: 1em;
+    z-index: 0;
+          
+    &:before, &:after {
+		--p: 0;
+		--s: calc(1 - 2*var(--p));
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		-webkit-mask: var(--m);
+						mask: var(--m);
+		content: ''
+	}
+	
+	&:after { --p: 1 }
+		
+	&:nth-child(2), &:nth-child(1) {
+		$s: 4em;
+		
+		&:before, &:after {
+			--c0: hsla(0, 0%, 0%, var(--p));
+			--c1: hsla(0, 0%, 0%, calc(1 - var(--p)));
+			background: 
+				repeating-linear-gradient(calc(var(--s)*45deg), 
+						$c 0, $c 3px, transparent 0, transparent 13px);
+			--m: repeating-radial-gradient(circle, 
+							var(--c0) 0, var(--c0) #{.5*$s}, 
+							var(--c1) 0, var(--c1) #{$s});
+		}
+	}
+    
+}
+
+
+
+.modal-content2 {
+
+
+
+    flex: 50%;
+    
+   
+    text-align: left;
+    font-family: 'Share Tech Mono', monospace;
+
+    display: none;
+    color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    
+    width: 32%;
+    height: 57%;
+    border-radius: 10px;
+   
+
+    overflow: hidden;
+	position: relative;
+	//height: var(--h);
+	
+	box-shadow: 2px 2px 17px aquamarine;
+	
+
+    $border: 5px;
+    color: #FFF;
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(51, 51, 51));;
+    background-clip: padding-box; /* !importanté */
+    border: solid $border aquamarine; /* !importanté */
+    z-index: 0;
+
+
+    &:before, &:after {
+		--p: 0;
+		--s: calc(1 - 2*var(--p));
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		-webkit-mask: var(--m);
+						mask: var(--m);
+		content: ''
+	}
+	
+	&:after { --p: 1 }
+		
+	
+		$s: 4em;
+		
+		&:before, &:after {
+			--c0: hsla(0, 0%, 0%, var(--p));
+			--c1: hsla(0, 0%, 0%, calc(1 - var(--p)));
+			background: 
+				repeating-linear-gradient(calc(var(--s)*45deg), 
+						$c 0, $c 3px, transparent 0, transparent 13px);
+			--m: repeating-radial-gradient(circle, 
+							var(--c0) 0, var(--c0) #{.5*$s}, 
+							var(--c1) 0, var(--c1) #{$s});
+		}
+	
+
+}
+
+.card > *, .modal-content2 > * {
+    z-index: 10;
+    position: relative;
+
+}
+	
+.frontDiv {
+
+
+    width: 80%;
+    height: 80%;
+    background-color: #f1ece7;
+   
+   border-width: 3px;
+   border-style:solid;
+   border-color: aquamarine;
+    border-radius: 25px;
+    text-align:center;
+    position: fixed;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 20%;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+
+
+ 
+    font-family: 'Share Tech Mono', monospace;
+
+
+
+	overflow: hidden;
+	
+	//height: var(--h);
+	
+	box-shadow: 2px 2px 17px aquamarine;
+	
+
+    $border: 5px;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(51, 51, 51));;
+    background-clip: padding-box; /* !importanté */
+    border: solid $border aquamarine; /* !importanté */
+    
+    z-index: 0;
+          
+    &:before, &:after {
+		--p: 0;
+		--s: calc(1 - 2*var(--p));
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		-webkit-mask: var(--m);
+						mask: var(--m);
+		content: ''
+	}
+	
+	&:after { --p: 1 }
+		
+	&:nth-child(2), &:nth-child(1) {
+		$s: 1em;
+		
+		&:before, &:after {
+			--c0: hsla(0, 0%, 0%, var(--p));
+			--c1: hsla(0, 0%, 0%, calc(1 - var(--p)));
+			background: linear-gradient(calc(var(--s)*45deg), 
+						transparent calc(50% - 1px), $c2 0, 
+				$c2 calc(50% + 1px), transparent 0) 50%/ #{$s $s};
+			--m: repeating-conic-gradient(var(--c0) 0%, var(--c0) 22.5deg, var(--c1) 0%, var(--c1) 45deg)
+		}
+    }
+    
+}
+
+.frontDiv > *, .modal-content2 > * {
+    z-index: 10;
+    position: relative;
+
+}
+
+#loginDiv, #sDiv
+{
+    font-size: 30px;
+    width: 30%;
+    padding: 10px;
+    background: linear-gradient(to right, rgb(145, 145, 145), rgb(197, 197, 197));;
+
+    display: inline-block;
+    height: 75%;
+    margin:auto;
+    margin-left: 10%;
+    vertical-align:top;
+    margin-top: 5%;
+
+    border-width: 3px;
+   border-style:solid;
+   border-color: aquamarine;
+}
+
+#addDiv
+{
+    font-size: 30px;
+    width: 30%;
+    padding: 10px;
+    background: linear-gradient(to right, rgb(145, 145, 145), rgb(197, 197, 197));;
+    display: inline-block;
+    margin-right: 100px;
+    height: 75%;
+    margin:auto;
+    margin-top: 0%;
+    vertical-align:top;
+    margin-top: 5%;
+
+    border-width: 3px;
+   border-style:solid;
+   border-color: aquamarine;
+}
+
+#sDiv {
+    width: 70%;
+    height: 80%;
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(51, 51, 51));;
+    position:fixed;
+   
+   border-width: 3px;
+   border-style:solid;
+   border-color: aquamarine;
+    border-radius: 25px;
+    text-align:center;
+    
+    margin: auto;
+    margin-top: 10%;
+    float: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    border-radius: 25px;
+    opacity: 1;
+    z-index: 0;
+    overflow: hidden;
+    font-family: 'Share Tech Mono', monospace;
+	box-shadow: 2px 2px 17px aquamarine;
+
+
+   
+
+    
+    
+}
+
+
+
